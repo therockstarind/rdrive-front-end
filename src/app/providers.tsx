@@ -6,6 +6,7 @@ import '®/styles/globals.css'
 import Navbar from "®/components/UI/Navbar";
 import Footer from "®/components/UI/Footer";
 import { NextUIProvider } from "@nextui-org/system";
+import AppBar from "®/components/UI/AppBar";
 
 export function Providers({children}: { children: React.ReactNode }) {
   return (
@@ -20,7 +21,7 @@ export function Providers({children}: { children: React.ReactNode }) {
                   </div>
                 </main>
               <Footer />
-              {/* <Bar /> */}
+              <AppBar />
           </div>
           </NextUIProvider>
         </Theme>

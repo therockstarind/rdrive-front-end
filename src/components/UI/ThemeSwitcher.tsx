@@ -44,7 +44,7 @@ const ThemeSwitcher: React.FC = () => {
       selectedKey={theme}
       onSelectionChange={(selectedTheme) => handleThemeChange(selectedTheme as string)}
       classNames={{
-        tabList: 'bg-transparent overflow-hidden',
+        tabList: 'bg-transparent overflow-hidden p-0',
         cursor: 'bg-gradient-to-t dark:from-[#0D1117] dark:to-gray-850 shadow-none border border-gray-400/30',
         tabContent: 'dark:group-data-[selected=true]:text-white text-black dark:text-white',
       }}
