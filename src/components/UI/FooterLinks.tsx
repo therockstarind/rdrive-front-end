@@ -1,5 +1,5 @@
 "use client";
-import { Text } from "@radix-ui/themes";
+import { Text, Tooltip } from "@radix-ui/themes";
 import Link from "next/link";
 
 const FooterLinks = () => {
@@ -49,11 +49,13 @@ const FooterLinks = () => {
   return (
     <>
       {FooterLinks.map(({ href, title, tooltip }, index) => (
+              <Tooltip content="Add to library">
     <li>
-        <Link href={href} target='_blank' rel='noopener noreferrer' key={index} aria-label={tooltip}>
+        <Link href={href} passHref rel='noopener noreferrer' key={index} aria-label={tooltip}>
         <Text size="1">{title}</Text>
         </Link>
     </li>
+    </Tooltip>
       ))}
     </>
   );

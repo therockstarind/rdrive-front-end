@@ -11,7 +11,7 @@ import AppBar from "®/components/UI/AppBar";
 export function Providers({children}: { children: React.ReactNode }) {
   return (
       <ThemeProvider attribute="class">
-        <Theme appearance="dark" accentColor="crimson" panelBackground="solid" radius="small">
+        <Theme>
         <NextUIProvider>
         <div className="flex min-h-screen flex-col items-center justify-center bg-white dark:bg-black">
                 <main className="flex w-full flex-1 flex-col">
