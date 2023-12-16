@@ -2,9 +2,9 @@
 import { Flex, Section, Text } from "@radix-ui/themes"
 import Image from "next/image";
 import Link from "next/link";
-import { FaUserCircle } from "react-icons/fa";
 import SocialFooter from "./SocialFooter";
 import FooterLinks from "./FooterLinks";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const Footer = () => {
     
@@ -18,14 +18,14 @@ const Footer = () => {
                             <Text size="2">&copy; {new Date().getFullYear()}</Text>
                         </Flex>
                     </Link>
-                    <Flex aria-label="Command Menu & ThemeSwitcher" gap="1" className="hidden md:flex"><FaUserCircle size="35" /><FaUserCircle size="35" /></Flex>
+                    <Flex aria-label="Command Menu & ThemeSwitcher" gap="1" className="hidden md:flex"><ThemeSwitcher /></Flex>
                 </Flex>
                 <Section size="1">
                 {/* flex  */}
                         <ul className="footer_FooterLinks">
                             <li className="socialFooters">
                                 <span ><SocialFooter /></span>
-                                <span className="block md:hidden"><SocialFooter /></span>
+                                <span className="block md:hidden"><ThemeSwitcher /></span>
                             </li>
                             <FooterLinks />
                         </ul>
