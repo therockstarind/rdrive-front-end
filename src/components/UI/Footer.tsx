@@ -10,7 +10,7 @@ const Footer = () => {
     
     return (
         <footer className="w-full border-t border-gray-400/30 items-center">
-            <Flex className="flex flex-col mx-auto w-full max-w-6xl my-6 gap-2 px-4 md:px-0" >
+            <Flex className="flex flex-col mx-auto w-full max-w-6xl my-6 gap-2 px-4 md:px-1" >
                 <Flex justify="between">
                     <Link href="/" passHref>
                         <Flex aria-label="RDRIVE Logo" gap="1" className="items-center">

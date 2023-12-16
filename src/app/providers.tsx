@@ -22,7 +22,6 @@ export function Providers({children}: { children: React.ReactNode }) {
               <Footer />
               {/* <Bar /> */}
           </div>
-           {/* <ThemePanel />  */}
           </NextUIProvider>
         </Theme>
       </ThemeProvider>
