@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.footer_FooterLinks {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    margin: -10px 0 0;
+}
+
+@media (max-width: 767px) {
+    .footer_FooterLinks {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+    }
+}
+@media (min-width: 600px) {
+    .footer_FooterLinks {
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+.socialFooters {
+    margin-top: 14px;
+    order: 2;
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+}
+}
