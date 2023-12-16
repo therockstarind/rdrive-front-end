@@ -53,7 +53,7 @@ const FooterLinks = () => {
       {FooterLinks.map(({ href, title, tooltip }, index) => (
         <React.Fragment key={index} >
         {index === FooterLinks.length - 1 &&<LegalLinks />}
-              <Tooltip content="Add to library">
+              <Tooltip content={tooltip}>
     <li>
         <Link href={href} aria-label={tooltip}  className="text-[#666] dark:text-[#888] hover:text-black dark:hover:text-white">
         <Text size="2">{title}</Text>
