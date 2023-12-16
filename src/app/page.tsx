@@ -18,7 +18,6 @@ export default function Home() {
       <Heading>Demo Text</Heading>
       <Heading>Demo Text</Heading>
       <Heading>Demo Text</Heading>
-      <LegalLinks />
     </main>
   )
 }

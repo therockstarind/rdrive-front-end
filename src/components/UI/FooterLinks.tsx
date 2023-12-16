@@ -1,6 +1,8 @@
 "use client";
 import { Text, Tooltip } from "@radix-ui/themes";
 import Link from "next/link";
+import LegalLinks from "./LegalLinks";
+import React from "react";
 
 const FooterLinks = () => {
     const FooterLinks: { href: string; title: string; tooltip: string;}[] = [
@@ -49,13 +51,16 @@ const FooterLinks = () => {
   return (
     <>
       {FooterLinks.map(({ href, title, tooltip }, index) => (
+        <React.Fragment key={index} >
+        {index === FooterLinks.length - 1 &&<LegalLinks />}
               <Tooltip content="Add to library">
     <li>
-        <Link href={href} passHref rel='noopener noreferrer' key={index} aria-label={tooltip}>
-        <Text size="1">{title}</Text>
+        <Link href={href} aria-label={tooltip}  className="text-[#666] dark:text-[#888] hover:text-black dark:hover:text-white">
+        <Text size="2">{title}</Text>
         </Link>
     </li>
     </Tooltip>
+    </React.Fragment>
       ))}
     </>
   );

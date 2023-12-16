@@ -1,40 +1,34 @@
 "use client"
-import { DropdownMenu, Button } from "@radix-ui/themes"
+import { Box, DropdownMenu, Flex, Text } from "@radix-ui/themes";
+import { GoChevronDown } from 'react-icons/go';
+import { useState } from 'react';
+import Link from "next/link";
 
 const LegalLinks = () => {
-    return(
-<DropdownMenu.Root>
-  <DropdownMenu.Trigger>
-    <Button variant="soft">
-      Options
-    </Button>
-  </DropdownMenu.Trigger>
-  <DropdownMenu.Content>
-    <DropdownMenu.Item shortcut="⌘ E">Edit</DropdownMenu.Item>
-    <DropdownMenu.Item shortcut="⌘ D">Duplicate</DropdownMenu.Item>
-    <DropdownMenu.Separator />
-    <DropdownMenu.Item shortcut="⌘ N">Archive</DropdownMenu.Item>
+  const [isOpen, setIsOpen] = useState(false);
 
-    <DropdownMenu.Sub>
-      <DropdownMenu.SubTrigger>More</DropdownMenu.SubTrigger>
-      <DropdownMenu.SubContent>
-        <DropdownMenu.Item>Move to project…</DropdownMenu.Item>
-        <DropdownMenu.Item>Move to folder…</DropdownMenu.Item>
+  const handleOpenChange = (open: boolean) => {
+    setIsOpen(open);
+  };
 
-        <DropdownMenu.Separator />
-        <DropdownMenu.Item>Advanced options…</DropdownMenu.Item>
-      </DropdownMenu.SubContent>
-    </DropdownMenu.Sub>
+  return (
+      <DropdownMenu.Root onOpenChange={handleOpenChange}>
+        <DropdownMenu.Trigger>
+          <Text size="2" className="flex items-center text-[#666] dark:text-[#888] hover:text-black dark:hover:text-white justify-none">
+            Legal
+            <GoChevronDown
+              className={`h-4 w-4 transition-transform transform ${isOpen ? "rotate-180" : ""}`} />
+          </Text>
+        </DropdownMenu.Trigger>
+        <DropdownMenu.Content>
+          <Link href="/about"><DropdownMenu.Item shortcut="A">About US</DropdownMenu.Item></Link>
+          <Link href="/privacy"><DropdownMenu.Item shortcut="P">Privacy Policy</DropdownMenu.Item></Link>
+          <Link href="/terms"><DropdownMenu.Item shortcut="T">Terms of Service</DropdownMenu.Item></Link>
+          <DropdownMenu.Separator />
+          <Link href="/"><DropdownMenu.Item shortcut="R" color="green">Report & Feedback</DropdownMenu.Item></Link>
+        </DropdownMenu.Content>
+      </DropdownMenu.Root>
+  );
+};
 
-    <DropdownMenu.Separator />
-    <DropdownMenu.Item>Share</DropdownMenu.Item>
-    <DropdownMenu.Item>Add to favorites</DropdownMenu.Item>
-    <DropdownMenu.Separator />
-    <DropdownMenu.Item shortcut="⌘ ⌫" color="red">
-      Delete
-    </DropdownMenu.Item>
-  </DropdownMenu.Content>
-</DropdownMenu.Root>
-    )
-    }
 export default LegalLinks;
