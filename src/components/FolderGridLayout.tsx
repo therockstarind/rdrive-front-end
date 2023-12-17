@@ -42,7 +42,7 @@ const FolderItems: FolderGridProps[]  = [
 
 const FolderItem: React.FC<FolderGridProps> = ({ href, title, img, index }) => (
   <motion.div key={index} variants={popUp} aria-label={title}>
-    <NextUiCard isPressable className="w-full p-0.5 shadow-none overflow-hidden">
+    <NextUiCard isPressable className="w-full p-0.5 shadow-none overflow-hidden bg-transparent">
   <Card className="w-full text-center" size={{initial:"2", sm: "4",}}>
       <Flex display="flex" justify="center" align="center" className="h-40" mb="2">
       <Image src={img} alt={title} isBlurred className="mx-auto my-10 h-40 object-center object-contain rounded-none"/>
