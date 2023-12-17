@@ -1,4 +1,4 @@
-// Import the required modules from 'react' and 'next/navigation'
+"use client"
 import React, { Suspense } from 'react';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import { Card, Flex } from '@radix-ui/themes';
