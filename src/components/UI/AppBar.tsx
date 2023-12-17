@@ -47,9 +47,9 @@ export default function AppBar() {
       selectedKey={selected}
       onSelectionChange={(selectedTab) => handleThemeChange(selectedTab as string)}
       classNames={{
-        base: "fixed items-center justify-center bottom-3 md:bottom-1 z-30 w-full max-w-md overflow-hidden px-1 dark:bg-black overflow-hidden",
-        tabList: "w-full p-2 bg-white bg-gradient-to-t dark:from-[#0D1117] dark:to-gray-850 border border-gray-400/30",
-        tab: "h-auto data-[hover-unselected=true]:opacity-90 overflow-hidden",
+        base: "fixed items-center justify-center bottom-3 md:bottom-1 z-30 w-full max-w-md px-1",
+        tabList: "w-full p-2 bg-white bg-gradient-to-b dark:from-[#0D1117] dark:to-gray-850 border border-gray-400/30 dark:bg-black",
+        tab: "h-auto data-[hover-unselected=true]:opacity-80 overflow-hidden",
         tabContent: "group-data-[selected=true]:text-green-400 text-black dark:text-white text-xs md:text-base p-0.5",
         cursor: "bg-transparent",
         panel: "",

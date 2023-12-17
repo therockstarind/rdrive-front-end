@@ -1,23 +1,9 @@
-import { Heading } from '@radix-ui/themes'
-import LegalLinks from '®/components/UI/LegalLinks'
+import FolderGridLayout from '®/components/FolderGridLayout'
 
 export default function Home() {
   return (
     <main>
-      <Heading>Demo Text</Heading>
-      <Heading>Demo Text</Heading>
-      <Heading>Demo Text</Heading>
-      <Heading>Demo Text</Heading>
-      <Heading>Demo Text</Heading>
-      <Heading>Demo Text</Heading>
-      <Heading>Demo Text</Heading>
-      <Heading>Demo Text</Heading>
-      <Heading>Demo Text</Heading>
-      <Heading>Demo Text</Heading>
-      <Heading>Demo Text</Heading>
-      <Heading>Demo Text</Heading>
-      <Heading>Demo Text</Heading>
-      <Heading>Demo Text</Heading>
+      <FolderGridLayout />
     </main>
   )
 }

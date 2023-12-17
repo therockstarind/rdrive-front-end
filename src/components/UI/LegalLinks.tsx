@@ -28,6 +28,7 @@ const LegalLinks = () => {
           <Link href="/"><DropdownMenu.Item shortcut="R" color="green">Report & Feedback</DropdownMenu.Item></Link>
         </DropdownMenu.Content>
       </DropdownMenu.Root>
+      
   );
 };
 
