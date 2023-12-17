@@ -37,7 +37,7 @@ export function Breadcrumb() {
   const segments = pathname ? pathname.split('/').slice(1) : [];
 
   return (
-    <Card size="1" className="dark:bg-black dark:bg-gradient-to-t dark:from-[#0D1117] dark:to-gray-850" my="2">
+    <Card size="1" className="dark:bg-black dark:bg-gradient-to-t dark:from-[#0D1117] dark:to-gray-850 select-none" my="2">
         <Flex align="center" gap="2" className="text-sm font-medium overflow-x-scroll">
         {/* Base URL */}
         <div className="flex items-center text-[#666] dark:text-[#888] hover:text-black dark:hover:text-white cursor-pointer gap-1">
