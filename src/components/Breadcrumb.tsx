@@ -1,7 +1,6 @@
 // Import the required modules from 'react' and 'next/navigation'
 import React, { Suspense } from 'react';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
-import { IoIosArrowForward } from "react-icons/io";
 import { Card, Flex } from '@radix-ui/themes';
 
 // Params component for displaying search parameters
