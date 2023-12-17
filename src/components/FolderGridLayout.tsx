@@ -1,8 +1,6 @@
 "use client"
 import { Text, Grid, Flex, Card } from "@radix-ui/themes";
-import Link from "next/link";
 import { Image } from "@nextui-org/image";
-import { Card as NextUICard } from "@nextui-org/card";
 import AnimatedDiv from "./FramerMotion/AnimatedDiv";
 import { FadeContainer, popUp } from "®/lib/FramerMotionVariants";
 import { motion } from "framer-motion";
@@ -43,16 +41,12 @@ const FolderItems: FolderGridProps[]  = [
 
 const FolderItem: React.FC<FolderGridProps> = ({ href, title, img, index }) => (
   <motion.div key={index} variants={popUp} aria-label={title}>
-  <Link href="" className="rounded-xl"      >
-    <NextUICard className="w-full max-w-sm p-0.5" isBlurred isPressable shadow="none">
-      <Card className="w-full" size={{initial:"1", sm: "3", md:"4",}}>
-      <Flex display="flex" justify="center" align="center" className="h-40" p='2'>
+  <Card className="w-full text-center" size={{initial:"2", sm: "4",}}>
+      <Flex display="flex" justify="center" align="center" className="h-40" mb="2">
       <Image src={img} alt={title} isBlurred className="mx-auto my-10 h-40 object-center object-contain rounded-none"/>
       </Flex>
-      <Flex justify="center" align="center"><Text size="3">{title}</Text></Flex>
-      </Card>
-    </NextUICard>
-    </Link>
+      <Text size="3">{title}</Text>
+    </Card>
   </motion.div>
 );
 
