@@ -2,7 +2,7 @@
 import React, { Suspense } from 'react';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import { IoIosArrowForward } from "react-icons/io";
-import { Card, Flex, ScrollArea } from '@radix-ui/themes';
+import { Card, Flex } from '@radix-ui/themes';
 
 // Params component for displaying search parameters
 function Params() {
@@ -38,14 +38,13 @@ export function Breadcrumb() {
   const segments = pathname ? pathname.split('/').slice(1) : [];
 
   return (
-    <Card size="1" className="dark:bg-black dark:bg-gradient-to-b dark:from-[#0D1117] dark:to-gray-850" my="2">
-        <ScrollArea type="hover" scrollbars="horizontal" >
-        <Flex align="center" gap="1" className="text-sm font-medium">
+    <Card size="1" className="dark:bg-black dark:bg-gradient-to-t dark:from-[#0D1117] dark:to-gray-850" my="2">
+        <Flex align="center" gap="2" className="text-sm font-medium overflow-x-scroll">
         {/* Base URL */}
         <div className="flex items-center text-[#666] dark:text-[#888] hover:text-black dark:hover:text-white cursor-pointer gap-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-4"
+          className="h-4 w-4"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -64,8 +63,8 @@ export function Breadcrumb() {
         {/* Path segments */}
         {segments.map((segment, index) => (
           <React.Fragment key={segment}>
-            <IoIosArrowForward className="text-gray-600" />
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-2">
+            <span className="text-gray-600">/</span>
               <span
                 className={index === segments.length - 1 ? 'text-green-400' : 'text-[#666] dark:text-[#888] hover:text-black dark:hover:text-white cursor-pointer'}
                 onClick={() => router.push(`/${segments.slice(0, index + 1).join('/')}`)}
@@ -80,7 +79,6 @@ export function Breadcrumb() {
           <Params />
         </Suspense>
         </Flex>
-      </ScrollArea>
     </Card>
   );
 }
