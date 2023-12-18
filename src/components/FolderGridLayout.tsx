@@ -6,10 +6,12 @@ import { FadeContainer, fromLeftChildren, popUp } from "®/lib/FramerMotionVaria
 import { motion } from "framer-motion";
 import { FolderGridProps } from "®/lib/types";
 import { Card as NextUiCard } from "@nextui-org/card";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const FolderItems: FolderGridProps[]  = [
   {
-    href: '/',
+    href: '/hello',
     title: 'Apple',
     img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Apple_Computer_Logo_rainbow.svg/412px-Apple_Computer_Logo_rainbow.svg.png',
   },
@@ -40,8 +42,10 @@ const FolderItems: FolderGridProps[]  = [
   },
 ];
 
+
 const FolderItem: React.FC<FolderGridProps> = ({ href, title, img, index }) => (
   <motion.div key={index} variants={fromLeftChildren} aria-label={title}>
+      <Link href={'/Xiaomi-12-Pro-(Dimensity-Edition)'} passHref>
     <NextUiCard isPressable className="w-full p-0.5 shadow-none overflow-hidden bg-transparent">
   <Card className="w-full text-center" size={{initial:"2", sm: "4",}}>
       <Flex display="flex" justify="center" align="center" className="h-40" mb="2">
@@ -50,6 +54,7 @@ const FolderItem: React.FC<FolderGridProps> = ({ href, title, img, index }) => (
       <Text size="3" className="line-clamp-1">{title}</Text>
     </Card>
     </NextUiCard>
+    </Link>
   </motion.div>
 );
 

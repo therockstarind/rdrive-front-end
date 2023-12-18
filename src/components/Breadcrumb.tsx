@@ -40,8 +40,6 @@ export function Breadcrumb() {
   const segments = pathname ? pathname.split('/').slice(1) : [];
 
   return (
-    <AnimatedDiv
-          variants={opacityVariant}>
     <Card size="1" className="dark:bg-black dark:bg-gradient-to-t dark:from-[#0D1117] dark:to-gray-850 select-none" my="2" aria-label="Breadcrumb">
         <Flex align="center" gap="2" className="text-sm font-medium overflow-x-scroll">
         {/* Base URL */}
@@ -84,6 +82,5 @@ export function Breadcrumb() {
         </Suspense>
         </Flex>
     </Card>
-    </AnimatedDiv>
   );
 }

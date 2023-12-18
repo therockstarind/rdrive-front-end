@@ -1,10 +1,10 @@
-import FolderListLayout from "®/components/UI/FolderListLayout";
+import FolderGridLayout from "®/components/FolderGridLayout";
 
 
 export default function Home() {
   return (
     <main>
-      <FolderListLayout />
+      <FolderGridLayout />
     </main>
   )
 }
