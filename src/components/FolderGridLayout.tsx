@@ -30,12 +30,12 @@ const FolderItems: FolderGridProps[]  = [
   },
   {
     href: '/',
-    title: 'JIO',
+    title: 'Xiaomi-12-Pro-(Dimensity-Edition)',
     img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Reliance_Jio_Logo_%28October_2015%29.svg/2048px-Reliance_Jio_Logo_%28October_2015%29.svg.png',
   },
   {
     href: '/',
-    title: 'Motorola',
+    title: 'Redmi K20 Pro',
     img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Motorola_logo.svg/2560px-Motorola_logo.svg.png',
   },
 ];
@@ -47,7 +47,7 @@ const FolderItem: React.FC<FolderGridProps> = ({ href, title, img, index }) => (
       <Flex display="flex" justify="center" align="center" className="h-40" mb="2">
       <Image src={img} alt={title} isBlurred className="mx-auto my-10 h-40 object-center object-contain rounded-none"/>
       </Flex>
-      <Text size="3">{title}</Text>
+      <Text size="3" className="line-clamp-1">{title}</Text>
     </Card>
     </NextUiCard>
   </motion.div>
