@@ -1,9 +1,9 @@
-import FolderGridLayout from '®/components/FolderGridLayout'
+import FolderListLayout from '®/components/FolderListLayout'
 
 export default function Home() {
   return (
     <main>
-      <FolderGridLayout />
+      <FolderListLayout />
     </main>
   )
 }

@@ -17,7 +17,7 @@ export function Providers({children}: { children: React.ReactNode }) {
         <div className="flex min-h-screen flex-col items-center justify-center bg-white dark:bg-black">
         <Navbar />
                 <main className="flex w-full flex-1 flex-col">
-                  <div className="w-full max-w-6xl items-center justify-center mx-auto p-2 my-2">
+                  <div className="w-full max-w-7xl items-center justify-center mx-auto p-2 my-2">
                   <Breadcrumb />
                     {children}
                   </div>
