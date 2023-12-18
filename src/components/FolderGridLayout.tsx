@@ -2,7 +2,7 @@
 import { Text, Grid, Flex, Card } from "@radix-ui/themes";
 import { Image } from "@nextui-org/image";
 import AnimatedDiv from "./FramerMotion/AnimatedDiv";
-import { FadeContainer, popUp } from "®/lib/FramerMotionVariants";
+import { FadeContainer, fromLeftChildren, popUp } from "®/lib/FramerMotionVariants";
 import { motion } from "framer-motion";
 import { FolderGridProps } from "®/lib/types";
 import { Card as NextUiCard } from "@nextui-org/card";
@@ -41,7 +41,7 @@ const FolderItems: FolderGridProps[]  = [
 ];
 
 const FolderItem: React.FC<FolderGridProps> = ({ href, title, img, index }) => (
-  <motion.div key={index} variants={popUp} aria-label={title}>
+  <motion.div key={index} variants={fromLeftChildren} aria-label={title}>
     <NextUiCard isPressable className="w-full p-0.5 shadow-none overflow-hidden bg-transparent">
   <Card className="w-full text-center" size={{initial:"2", sm: "4",}}>
       <Flex display="flex" justify="center" align="center" className="h-40" mb="2">

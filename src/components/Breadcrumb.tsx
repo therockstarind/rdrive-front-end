@@ -2,6 +2,9 @@
 import React, { Suspense } from 'react';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import { Card, Flex } from '@radix-ui/themes';
+import { motion } from 'framer-motion';
+import { opacityVariant, popUpFromBottomForText } from '®/lib/FramerMotionVariants';
+import AnimatedDiv from './FramerMotion/AnimatedDiv';
 
 // Params component for displaying search parameters
 function Params() {
@@ -37,7 +40,9 @@ export function Breadcrumb() {
   const segments = pathname ? pathname.split('/').slice(1) : [];
 
   return (
-    <Card size="1" className="dark:bg-black dark:bg-gradient-to-t dark:from-[#0D1117] dark:to-gray-850 select-none" my="2">
+    <AnimatedDiv
+          variants={opacityVariant}>
+    <Card size="1" className="dark:bg-black dark:bg-gradient-to-t dark:from-[#0D1117] dark:to-gray-850 select-none" my="2" aria-label="Breadcrumb">
         <Flex align="center" gap="2" className="text-sm font-medium overflow-x-scroll">
         {/* Base URL */}
         <div className="flex items-center text-[#666] dark:text-[#888] hover:text-black dark:hover:text-white cursor-pointer gap-1">
@@ -79,5 +84,6 @@ export function Breadcrumb() {
         </Suspense>
         </Flex>
     </Card>
+    </AnimatedDiv>
   );
 }
