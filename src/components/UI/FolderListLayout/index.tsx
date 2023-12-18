@@ -1,15 +1,17 @@
 "use client";
 import React from "react";
-import { Container, Flex, Heading, Separator, Table } from "@radix-ui/themes";
+import { Flex, Separator, Table } from "@radix-ui/themes";
 import ImageCard from "./ImageCard";
 import Author from "./Author";
 import FileList from "./FileList";
 import Readme from "./Readme";
+import Header from "./Header";
+import SocialBar from "./SocialBar";
 
 const FolderListLayout = () => {
   return (
     <main>
-      <Heading as="h1" mx="2" className="line-clamp-1">Xiaomi-12-Pro-(Dimensity-Edition)</Heading>
+      <Header />
       <Separator my="3" size="4" />
       <Flex className="w-full" gap="3" direction={{ initial: "column-reverse", md: "row" }}>
       <Flex className="w-full" direction="column" gap="3">
@@ -36,8 +38,9 @@ const FolderListLayout = () => {
 
         <Readme />
        </Flex>
-        <Flex className="min-w-320px" direction="column">
+        <Flex className="min-w-320px" direction="column" gap="3">
           <ImageCard />
+          <SocialBar />
         </Flex>
       </Flex>
     </main>
