@@ -1,4 +1,5 @@
-import FolderListLayout from '®/components/FolderListLayout'
+import FolderListLayout from "®/components/UI/FolderListLayout";
+
 
 export default function Home() {
   return (
