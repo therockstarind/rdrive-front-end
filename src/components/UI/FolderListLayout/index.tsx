@@ -12,10 +12,9 @@ const FolderListLayout = () => {
   return (
     <main>
       <Header />
-      <Separator my="3" size="4" />
-      <Flex className="w-full" gap="3" direction={{ initial: "column-reverse", md: "row" }}>
-      <Flex className="w-full" direction="column" gap="3">
-
+      <Separator my="4" size="4" />
+      <Flex className="w-full" gap="4" direction={{ initial: "column-reverse", md: "row" }}>
+      <Flex className="w-full" direction="column" gap="4">
         <Table.Root variant="surface">
           <Table.Header>
             <Table.Row>
@@ -38,9 +37,9 @@ const FolderListLayout = () => {
 
         <Readme />
        </Flex>
-        <Flex className="min-w-320px" direction="column" gap="3">
+        <Flex className="min-w-320px" direction="column"  gap="4">
           <ImageCard />
-          <SocialBar />
+          <Flex justify="center" className="flex md:hidden"><SocialBar /></Flex>
         </Flex>
       </Flex>
     </main>

@@ -4,22 +4,25 @@ import { BiDislike, BiLike } from 'react-icons/bi';
 import { FiShare } from 'react-icons/fi';
 
 const SocialBar = () => {
+    const hover = 'hover:bg-gray-100 dark:hover:bg-gray-400/20'
     return (
-        <Flex gap="3" align="center" justify="center">
-          <Button variant="surface" size="2" color="teal">
+        <Flex gap="3" align="center" justify="center" direction={{md: 'row-reverse'}}>
+          <Button size="2" variant="surface" color="gray" className={`${hover}`}>
               3 Views
           </Button>
-          <Button variant="surface" size="2" color="sky">
-              <FiShare size={18} /> Share
-            </Button> 
-            <Flex gap="2">
-            <Button variant="surface" size="2">
+          <Button size="2" variant="surface" color="gray" className={`${hover}`}>
+            <FiShare size={18} /> Share
+          </Button> 
+          <Tooltip content="was this help full?">
+            <Flex gap="3">
+            <Button size="2" variant="surface" color="gray" className={`${hover}`}>
               <BiLike size={23} /> 0
             </Button> 
-            <Button variant="surface" size="2">
+            <Button size="2" variant="surface" color="gray" className={`${hover}`}>
               <BiDislike size={23} />
             </Button> 
             </Flex>
+          </Tooltip>
       </Flex>
     )
 }
