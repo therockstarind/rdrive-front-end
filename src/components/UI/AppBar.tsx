@@ -6,6 +6,7 @@ import { TbApps, TbDeviceGamepad2 } from "react-icons/tb";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { Tab, Tabs } from "@nextui-org/tabs";
+import CommandMenu from "../Command/Menu";
 
 // Function to extract the value based on the pathname
 function getPathValue(pathname: string) {
@@ -80,7 +81,7 @@ export default function AppBar() {
             whileHover={{ y: -3, transition: { duration: 0.2 } }}
             className="flex w-full flex-col items-center"
           >
-            {/* <Search /> */}
+            <CommandMenu />
           </motion.div>
         }
       />
