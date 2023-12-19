@@ -7,6 +7,7 @@ import { FaRupeeSign } from 'react-icons/fa';
 import { MdPhonelinkSetup } from 'react-icons/md';
 import { SiGithubsponsors } from 'react-icons/si';
 import { TbApps, TbDeviceGamepad2 } from 'react-icons/tb';
+import {  Listbox,  ListboxItem} from "@nextui-org/listbox";
 
 const CommandList = () => {
   const size = 'w-5 h-5';
@@ -63,27 +64,15 @@ const CommandList = () => {
   ];
 
   return (
-    <>
+<Listbox aria-label="Command List" className="h-[50vh] w-full">
       {links.map((link, index) => (
-        <Table.Row key={index} className="hover:bg-gray-100 dark:hover:bg-gray-400/10 select-none">
-          <Table.Cell>
-            <Link href={link.href} passHref key={index}>
-              <Flex align="center" gap="3">
-                {link.icon}
-                <Flex direction="column">
+        <ListboxItem key={index} href={link.href} showDivider description={<div className="line-clamp-1">{link.description}</div>} startContent={link.icon}>
                   <Text size="2" className="line-clamp-1">
                     {link.title}
                   </Text>
-                  <Text size="1" className="line-clamp-1" color="gray">
-                    {link.description}
-                  </Text>
-                </Flex>
-              </Flex>
-            </Link>
-          </Table.Cell>
-        </Table.Row>
+        </ListboxItem>
       ))}
-    </>
+</Listbox>
   );
 };
 
