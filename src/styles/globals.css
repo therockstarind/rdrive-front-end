@@ -40,4 +40,14 @@
 ::-webkit-scrollbar {
     width: 0px;
     height: 0px;
-  }
+}
+
+/* Costume styles for RadixUI Overwrite */
+
+@media screen and (max-width: 767px) {
+    .CommandMenu{
+        position: fixed;
+        bottom: 0;
+        border-radius: none;
+    }
+}

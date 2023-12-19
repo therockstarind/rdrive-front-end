@@ -12,7 +12,7 @@ const CommandMenu = () => {
           <GoSearch className="text-white" size="30" />
         </div>
       </Dialog.Trigger>
-      <Dialog.Content className="p-0 max-w-3xl">
+      <Dialog.Content className="p-0 max-w-3xl CommandMenu">
         <Table.Root className="w-full">
           <Table.Header>
             <Table.Row>
