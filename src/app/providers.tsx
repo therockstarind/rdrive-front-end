@@ -7,7 +7,6 @@ import Navbar from "®/components/UI/Navbar";
 import Footer from "®/components/UI/Footer";
 import { NextUIProvider } from "@nextui-org/system";
 import AppBar from "®/components/UI/AppBar";
-import { Breadcrumb } from "®/components/Breadcrumb";
 
 export function Providers({children}: { children: React.ReactNode }) {
   return (
@@ -18,7 +17,6 @@ export function Providers({children}: { children: React.ReactNode }) {
         <Navbar />
                 <main className="flex w-full flex-1 flex-col">
                   <div className="w-full max-w-7xl items-center justify-center mx-auto p-2 my-2">
-                  <Breadcrumb />
                     {children}
                   </div>
                 </main>
