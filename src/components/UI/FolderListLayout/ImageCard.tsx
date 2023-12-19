@@ -4,7 +4,7 @@ import { Card, Flex } from "@radix-ui/themes";
 
 const ImageCard = () => {
 return (
-    <Card className="min-w-[320px]" size={{ initial: "2", sm: "4" }} aria-label="Xiaomi-12-Pro-(Dimensity-Edition)">
+    <Card size={{ initial: "2", sm: "4" }} aria-label="Xiaomi-12-Pro-(Dimensity-Edition)">
             <Flex display="flex" justify="center" align="center" className="h-52">
               <Image
                 src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1666344481.20013313.png"

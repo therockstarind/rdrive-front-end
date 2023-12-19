@@ -13,7 +13,7 @@ const FolderListLayout = () => {
     <main>
       <Header />
       <Separator my="4" size="4" />
-      <Flex className="w-full" gap="4" direction={{ initial: "column-reverse", md: "row" }}>
+      <Flex className="w-full" gap="4" direction={{ initial: "column-reverse", sm: "row" }}>
       <Flex className="w-full" direction="column" gap="4">
         <Table.Root variant="surface">
           <Table.Header>
@@ -28,7 +28,7 @@ const FolderListLayout = () => {
           <ScrollArea type="auto" scrollbars="vertical" className="max-h-[200px] md:max-h-[300px] lg:max-h-[400px]">
             {[1,2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((item) => (
               <Table.Row key={item}>
-                <Table.RowHeaderCell className="hover:bg-gray-100 dark:hover:bg-gray-400/10 hover:text-black dark:hover:text-white">
+                <Table.RowHeaderCell className="hover:bg-gray-100 dark:hover:bg-gray-400/10 hover:text-black dark:hover:text-white select-none">
                   <FileList />
                 </Table.RowHeaderCell>
               </Table.Row>
@@ -41,7 +41,7 @@ const FolderListLayout = () => {
        </Flex>
         <Flex className="min-w-320px" direction="column"  gap="4">
           <ImageCard />
-          <Flex justify="center" className="flex md:hidden"><SocialBar /></Flex>
+          <Flex justify="center" className="flex sm:hidden"><SocialBar /></Flex>
         </Flex>
       </Flex>
     </main>
