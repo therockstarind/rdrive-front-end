@@ -71,7 +71,7 @@ const CommandList = () => {
               <Flex align="center" gap="3">
                 {link.icon}
                 <Flex direction="column">
-                  <Text size="3" className="leading-8 line-clamp-1">
+                  <Text size="2" className="line-clamp-1">
                     {link.title}
                   </Text>
                   <Text size="1" className="line-clamp-1" color="gray">
