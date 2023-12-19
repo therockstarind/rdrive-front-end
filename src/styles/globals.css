@@ -48,6 +48,6 @@
     .CommandMenu{
         position: fixed;
         bottom: 0;
-        border-radius: none;
+        border-radius: 10px 10px 0 0;
     }
 }
