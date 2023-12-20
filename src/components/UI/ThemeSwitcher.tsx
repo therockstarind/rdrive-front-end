@@ -38,19 +38,16 @@ const ThemeSwitcher: React.FC = () => {
   return (
     <Tabs
       aria-label="Theme Switcher"
-      size="lg"
+      color="secondary"
+      variant="light"
       radius="full"
       items={tabs.map((item) => item.theme)}
       selectedKey={theme}
       onSelectionChange={(selectedTheme) => handleThemeChange(selectedTheme as string)}
-      classNames={{
-        tabList: "p-0 bg-transparent",
-        tabContent: "dark:group-data-[selected=true]:text-white text-black dark:text-white",
-        cursor: "bg-white bg-gradient-to-t dark:from-[#0D1117] dark:to-gray-850 shadow-none border border-gray-400/30",
-      }}
+      classNames={{ cursor: 'ListCard !rounded-full', tabContent: 'group-data-[selected=true]:text-none text-black dark:text-white'}}
     >
       {tabs.map((item) => (
-        <Tab key={item.theme} title={item.icon} aria-label={item.theme}/>
+        <Tab key={item.theme} title={item.icon} aria-label={item.theme} className=''/>
       ))}
     </Tabs>
   );

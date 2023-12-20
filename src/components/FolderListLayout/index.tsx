@@ -16,7 +16,7 @@ const FolderListLayout = () => {
       <Flex className="w-full" direction="column" gap="4">
       <Container className="ListCard">
         <div className="border-b border-gray-400/30 bg-[var(--gray-a2)] py-2"><Author /></div>
-      <ScrollArea type="auto" scrollbars="vertical" className="h-[40dvh]">
+      <ScrollArea type="auto" scrollbars="vertical" className="h-52 sm:h-64 md:h-72">
         <FileList />
       </ScrollArea>  
       </Container>
