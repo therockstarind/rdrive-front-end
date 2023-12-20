@@ -1,6 +1,26 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* 
+@layer base {
+    @import 'tailwindcss/base';
+  }
+  
+  @layer components {
+    @import 'tailwindcss/components';
+  }
+  
+  @layer utilities {
+    @import 'tailwindcss/utilities';
+  }
+  
+  @layer radix_ui {
+    @import '@radix-ui/themes/styles.css';
+  }
+  
+  @layer tw_base, radix_ui, tw_components, tw_utilities; */
+  
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  
 
 .footer_FooterLinks {
     display: flex;
@@ -50,4 +70,12 @@
         bottom: 0;
         border-radius: 10px 10px 0 0;
     }
+}
+
+.ListCard {
+    background-color: var(--color-panel);
+    border-width: 1px;
+    border-color: rgba(153, 163, 175, 0.3);
+    border-radius: var(--radius-4);
+    overflow: hidden;
 }
