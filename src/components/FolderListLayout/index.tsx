@@ -36,7 +36,6 @@ const FolderListLayout = () => {
             </ScrollArea>
           </Table.Body>
         </Table.Root>
-
         <Readme />
        </Flex>
         <Flex className="min-w-320px" direction="column"  gap="4">
