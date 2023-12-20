@@ -67,7 +67,7 @@ const CommandList = () => {
 <Listbox aria-label="Command List">
     <ListboxSection title="Suggestions"> 
       {links.map((link, index) => (
-        <ListboxItem key={link.title} showDivider description={<div className="line-clamp-1">{link.description}</div>} startContent={link.icon}>
+        <ListboxItem key={link.title} href={link.href} showDivider description={<div className="line-clamp-1">{link.description}</div>} startContent={link.icon}>
                   <Text size="2" className="line-clamp-1">
                     {link.title}
                   </Text>

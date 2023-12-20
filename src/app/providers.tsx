@@ -7,12 +7,14 @@ import Navbar from "®/components/UI/Navbar";
 import Footer from "®/components/UI/Footer";
 import { NextUIProvider } from "@nextui-org/system";
 import AppBar from "®/components/UI/AppBar";
+import { useRouter } from "next/navigation";
 
 export function Providers({children}: { children: React.ReactNode }) {
+  const router = useRouter();
   return (
       <ThemeProvider attribute="class">
         <Theme>
-        <NextUIProvider>
+        <NextUIProvider navigate={router.push}>
         <div className="flex min-h-screen flex-col items-center justify-center bg-white dark:bg-black">
         <Navbar />
                 <main className="flex w-full flex-1 flex-col">

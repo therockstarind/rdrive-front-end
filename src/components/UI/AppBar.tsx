@@ -75,11 +75,11 @@ export default function AppBar() {
         }
       />
       <Tab
-        key=""
+        key="search"
         title={
           <motion.div
             whileHover={{ y: -3, transition: { duration: 0.2 } }}
-            className="flex w-full flex-col items-center"
+            className="flex w-full flex-col items-center p-2 border border-gray-400/30 rounded-full text-black dark:text-white"
           >
             <CommandMenu />
           </motion.div>
