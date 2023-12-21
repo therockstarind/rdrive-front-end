@@ -1,19 +1,20 @@
 "use client";
-import Link from "next/link";
+import * as ToggleGroup from "@radix-ui/react-toggle-group";
+import { Flex, Text } from "@radix-ui/themes";
 import { motion } from "framer-motion";
+import { usePathname, useRouter } from "next/navigation";
+import { useState } from "react";
 import { BsAndroid2, BsApple } from "react-icons/bs";
+import { GoSearch } from "react-icons/go";
 import { TbApps, TbDeviceGamepad2 } from "react-icons/tb";
-import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import { Tab, Tabs } from "@nextui-org/tabs";
 import CommandMenu from "../Command/Menu";
 
-// Function to extract the value based on the pathname
+const iconStyles = "data-[state=on]:text-green-400 p-2 rounded-full hover:text-[var(--accent-a11)]";
+
 function getPathValue(pathname: string) {
-  const segments = pathname.split("/").filter(Boolean).map(segment => segment.toLowerCase());
+  const segments = pathname.split("/").filter(Boolean).map((segment) => segment.toLowerCase());
   const firstSegment = segments[0];
 
-  // Map the first segment to a specific value
   switch (firstSegment) {
     case "apps":
       return "Apps";
@@ -26,83 +27,48 @@ function getPathValue(pathname: string) {
       return "Android";
   }
 }
-
 export default function AppBar() {
   const pathname = usePathname();
-  const [selected, setSelected] = useState(getPathValue(pathname));
-
-  useEffect(() => {
-    setSelected(getPathValue(pathname));
-  }, [pathname]);
-
-  const handleThemeChange = (selectedTab: string) => {
-    setSelected(selectedTab);
-  };
-
+  const router = useRouter();
+  const [showModal, setShowModal] = useState(false);
   return (
-    <Tabs
-      aria-label="AppBar"
-      color="secondary"
-      variant="bordered"
-      radius="full"
-      selectedKey={selected}
-      onSelectionChange={(selectedTab) => handleThemeChange(selectedTab as string)}
-      classNames={{
-        base: "fixed items-center justify-center bottom-3 md:bottom-1 z-30 w-full max-w-md px-1",
-        tabList: "w-full p-2 bg-white bg-gradient-to-b dark:from-[#0D1117] dark:to-gray-850 border border-gray-400/30 dark:bg-black",
-        tab: "h-auto data-[hover-unselected=true]:opacity-80 overflow-hidden",
-        tabContent: "group-data-[selected=true]:text-green-400 text-black dark:text-white text-xs md:text-base p-0.5",
-        cursor: "bg-transparent",
-        panel: "",
-      }}
-    >
-      <Tab
-        key="Android"
-        title={
-          <Link href="/" passHref className="flex w-full flex-col items-center">
+    <main className="fixed items-center bottom-3 md:bottom-1 z-30 w-full sm:max-w-xs md:max-w-sm lg:max-w-md rounded-full border border-gray-400/30 overflow-hidden">
+      <CommandMenu showModal={showModal} setShowModal={setShowModal} />
+      <ToggleGroup.Root type="single" defaultValue={getPathValue(pathname)} aria-label="AppBar">
+        <Flex justify="between" align="center" p="1" className="bg-gradient-to-b from-white to-gray-100 dark:from-black dark:to-gray-800">
+        <ToggleGroup.Item value="Android" className={iconStyles} onClick={() => router.push('/')}>
+          <Flex direction="column" align="center">
             <BsAndroid2 size={24} />
-            <span>Android</span>
-          </Link>
-        }
-      />
-      <Tab
-        key="Apps"
-        title={
-          <Link href="/Apps" className="flex w-full flex-col items-center">
+            <Text>Android</Text>
+          </Flex>
+        </ToggleGroup.Item>
+        <ToggleGroup.Item value="Apps" className={iconStyles} onClick={() => router.push('/Apps')}>
+          <Flex direction="column" align="center">
             <TbApps size={24} />
-            <span>Apps</span>
-          </Link>
-        }
-      />
-      <Tab
-        key="search"
-        title={
-          <motion.div
-            whileHover={{ y: -3, transition: { duration: 0.2 } }}
-            className="flex w-full flex-col items-center p-2 border border-gray-400/30 rounded-full text-black dark:text-white"
-          >
-            <CommandMenu />
-          </motion.div>
-        }
-      />
-      <Tab
-        key="Games"
-        title={
-          <Link href="/Games" className="flex w-full flex-col items-center">
+            <Text>Apps</Text>
+          </Flex>
+        </ToggleGroup.Item>
+        <motion.div whileHover={{ y: -3, transition: { duration: 0.2 } }}>
+        <ToggleGroup.Item value="" className={`${iconStyles} border border-gray-400/30 p-3`} onClick={() => setShowModal(true)}>
+          <Flex direction="column" align="center">
+            <GoSearch size={24} />
+          </Flex>
+        </ToggleGroup.Item>
+        </motion.div>
+        <ToggleGroup.Item value="Games" className={iconStyles} onClick={() => router.push('/Games')}>
+          <Flex direction="column" align="center">
             <TbDeviceGamepad2 size={24} />
-            <span>Games</span>
-          </Link>
-        }
-      />
-      <Tab
-        key="Apple"
-        title={
-          <Link href="/Apple" className="flex w-full flex-col items-center">
+            <Text>Games</Text>
+          </Flex>
+        </ToggleGroup.Item>
+        <ToggleGroup.Item value="Apple" className={iconStyles} onClick={() => router.push('/Apple')}>
+          <Flex direction="column" align="center">
             <BsApple size={24} />
-            <span>Apple</span>
-          </Link>
-        }
-      />
-    </Tabs>
+            <Text>Apple</Text>
+          </Flex>
+        </ToggleGroup.Item>
+        </Flex>
+      </ToggleGroup.Root>
+    </main>
   );
 }

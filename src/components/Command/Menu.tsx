@@ -1,18 +1,22 @@
 "use client";
 
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { Dialog, ScrollArea, Flex,Kbd, Box } from "@radix-ui/themes";
 import { GoSearch } from "react-icons/go";
 import CommandList from "./List";
 import { Input } from "@nextui-org/input";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
-const CommandMenu = () => {
+export default function CommandMenu({
+  showModal,
+  setShowModal,
+}: {
+  showModal: boolean;
+  setShowModal: Dispatch<SetStateAction<boolean>>;
+}) {
+
   return (
-    <Dialog.Root>
-      <Dialog.Trigger>
-          <GoSearch size="30" />
-      </Dialog.Trigger>
+    <Dialog.Root open={showModal} onOpenChange={setShowModal}>
       <Dialog.Content className="p-0 max-w-3xl CommandMenu">
       <Input type="search" variant="underlined" spellCheck placeholder="Search" autoFocus startContent={<GoSearch/>} classNames={{innerWrapper: "px-2",}}/>
         <ScrollArea type="auto" scrollbars="vertical" className="h-[60vh] sm:h-[45vh]">
@@ -30,7 +34,6 @@ const CommandMenu = () => {
             <Kbd>
               <Box p="1" ><FaArrowDown /></Box>
             </Kbd>
-            <Kbd>Down</Kbd>
             <Kbd>Enter</Kbd>
           </Flex>        
       </Flex>  
@@ -39,4 +42,3 @@ const CommandMenu = () => {
   );
 };
 
-export default CommandMenu;
