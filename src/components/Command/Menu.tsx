@@ -22,7 +22,7 @@ export default function CommandMenu({
         <ScrollArea type="auto" scrollbars="vertical" className="h-[60vh] sm:h-[45vh]">
               <CommandList />
         </ScrollArea>
-      <Flex justify="between" align="center" p="2" className="border-t border-gray-400/30 hidden md:flex">
+      <Flex justify="between" align="center" p="2" className="border-t border-gray-400/30">
           <Flex>
           <Kbd>Esc</Kbd>
           </Flex>
