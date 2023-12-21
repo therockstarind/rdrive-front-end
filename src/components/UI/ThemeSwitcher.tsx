@@ -1,6 +1,5 @@
 "use client";
-import * as ToggleGroup from "@radix-ui/react-toggle-group";
-import { Flex } from '@radix-ui/themes';
+import { Tab, Tabs } from "@nextui-org/tabs";
 import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
 import { BsFillSunFill, BsMoon } from 'react-icons/bs';
@@ -16,21 +15,40 @@ const ThemeSwitcher: React.FC = () => {
   if (!mounted) {
     return null;
   }
-  const iconStyles = "data-[state=on]:text-green-400 p-2 rounded-full hover:text-[var(--accent-a11)] data-[state=on]:border border-gray-400/30";
+  const handleThemeChange = (selectedTheme: string) => {
+    setTheme(selectedTheme);
+  };
+
+  const tabs = [
+    {
+      theme: 'light',
+      icon: <BsFillSunFill />,
+    },
+    {
+        theme: 'system',
+        icon: <RiComputerLine />,
+      },
+    {
+      theme: 'dark',
+      icon: <BsMoon />,
+    },
+  ];
+
   return (
-      <ToggleGroup.Root type="single" defaultValue={theme} aria-label="AppBar">
-        <Flex gap="3" align="center" className="w-full">
-        <ToggleGroup.Item value="light" className={iconStyles} onClick={() => setTheme('light')}>
-        <BsFillSunFill />
-        </ToggleGroup.Item>
-        <ToggleGroup.Item value="system" className={iconStyles} onClick={() => setTheme('system')}>
-        <RiComputerLine />
-        </ToggleGroup.Item>
-        <ToggleGroup.Item value="dark" className={iconStyles} onClick={() => setTheme('dark')}>
-        <BsMoon />
-          </ToggleGroup.Item>
-        </Flex>
-      </ToggleGroup.Root>
+    <Tabs
+      aria-label="Theme Switcher"
+      color="secondary"
+      variant="light"
+      radius="full"
+      items={tabs.map((item) => item.theme)}
+      selectedKey={theme}
+      onSelectionChange={(selectedTheme) => handleThemeChange(selectedTheme as string)}
+      classNames={{ cursor: 'ListCard !rounded-full', tabContent: 'group-data-[selected=true]:text-none text-black dark:text-white'}}
+    >
+      {tabs.map((item) => (
+        <Tab key={item.theme} title={item.icon} aria-label={item.theme} className=''/>
+      ))}
+    </Tabs>
   );
 };
 
