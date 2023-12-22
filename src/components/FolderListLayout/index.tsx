@@ -1,5 +1,7 @@
 "use client";
 import { Container, Flex, ScrollArea, Separator } from "@radix-ui/themes";
+import { FadeContainer } from "®/lib/FramerMotionVariants";
+import AnimatedDiv from "../FramerMotion/AnimatedDiv";
 import Author from "./Author";
 import FileList from "./FileList";
 import Header from "./Header";
@@ -9,8 +11,8 @@ import SocialBar from "./SocialBar";
 
 const FolderListLayout = () => {
   return (
-    <main>
-      <Header />
+    <AnimatedDiv variants={FadeContainer}>
+        <Header />
       <Separator my="4" size="4" />
       <Flex className="w-full" gap="4" direction={{ initial: "column-reverse", sm: "row" }}>
       <Flex className="w-full" direction="column" gap="4">
@@ -24,10 +26,10 @@ const FolderListLayout = () => {
       </Flex>
         <Flex className="min-w-320px" direction="column"  gap="4">
           <ImageCard />
-          <Flex justify="center" className="flex sm:hidden"><SocialBar /></Flex>
+          <Flex justify="center" className="flex md:hidden"><SocialBar /></Flex>
         </Flex>
       </Flex>
-    </main>
+    </AnimatedDiv>
   );
 };
 

@@ -4,6 +4,7 @@ import { Card, Flex } from "@radix-ui/themes";
 
 const ImageCard = () => {
 return (
+  // <AnimatedDiv variants={popUpFromBottomForText}>
     <Card size={{ initial: "2", sm: "4" }} aria-label="Xiaomi-12-Pro-(Dimensity-Edition)">
             <Flex display="flex" justify="center" align="center" className="h-52">
               <Image
@@ -14,6 +15,7 @@ return (
               />
             </Flex>
     </Card>
+  // </AnimatedDiv>
 )
 }
 export default ImageCard;

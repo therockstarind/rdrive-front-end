@@ -3,7 +3,7 @@ import { Image } from "@nextui-org/image";
 import { Card, Flex, Grid, Text } from "@radix-ui/themes";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FadeContainer, fromLeftChildren } from "®/lib/FramerMotionVariants";
+import { FadeContainer, fromLeftVariant } from "®/lib/FramerMotionVariants";
 import { FolderGridProps } from "®/lib/types";
 import AnimatedDiv from "./FramerMotion/AnimatedDiv";
 
@@ -44,7 +44,7 @@ const FolderItem: React.FC<FolderGridProps> = ({ href, title, img, index }) => {
 
 return (
   <Link href={'/Xiaomi-12-Pro-(Dimensity-Edition)'} passHref>
-  <motion.div key={index} variants={fromLeftChildren} aria-label={title}>
+  <motion.div key={index} variants={fromLeftVariant} aria-label={title}>
     <Card className="HoverBG" size={{initial:"2", sm: "4",}}>
       <Flex display="flex" justify="center" align="center" className="h-40" mb="2">
       <Image src={img} alt={title} isBlurred className="mx-auto my-10 h-40 object-center object-contain rounded-none"/>
