@@ -1,13 +1,11 @@
 "use client"
-import { Text, Grid, Flex, Card } from "@radix-ui/themes";
 import { Image } from "@nextui-org/image";
-import AnimatedDiv from "./FramerMotion/AnimatedDiv";
-import { FadeContainer, fromLeftChildren, popUp } from "®/lib/FramerMotionVariants";
+import { Card, Flex, Grid, Text } from "@radix-ui/themes";
 import { motion } from "framer-motion";
-import { FolderGridProps } from "®/lib/types";
-import { Card as NextUiCard } from "@nextui-org/card";
-import { useRouter } from "next/router";
 import Link from "next/link";
+import { FadeContainer, fromLeftChildren } from "®/lib/FramerMotionVariants";
+import { FolderGridProps } from "®/lib/types";
+import AnimatedDiv from "./FramerMotion/AnimatedDiv";
 
 const FolderItems: FolderGridProps[]  = [
   {
@@ -42,21 +40,21 @@ const FolderItems: FolderGridProps[]  = [
   },
 ];
 
+const FolderItem: React.FC<FolderGridProps> = ({ href, title, img, index }) => {
 
-const FolderItem: React.FC<FolderGridProps> = ({ href, title, img, index }) => (
+return (
+  <Link href={'/Xiaomi-12-Pro-(Dimensity-Edition)'} passHref>
   <motion.div key={index} variants={fromLeftChildren} aria-label={title}>
-      <Link href={'/Xiaomi-12-Pro-(Dimensity-Edition)'} passHref>
-    <NextUiCard isPressable className="w-full p-0.5 shadow-none overflow-hidden bg-transparent">
-  <Card className="w-full text-center" size={{initial:"2", sm: "4",}}>
+    <Card className="HoverBG" size={{initial:"2", sm: "4",}}>
       <Flex display="flex" justify="center" align="center" className="h-40" mb="2">
       <Image src={img} alt={title} isBlurred className="mx-auto my-10 h-40 object-center object-contain rounded-none"/>
       </Flex>
-      <Text size="3" className="line-clamp-1">{title}</Text>
+      <Text size="3" className="text-center line-clamp-1">{title}</Text>
     </Card>
-    </NextUiCard>
-    </Link>
   </motion.div>
+  </Link>
 );
+}
 
 const FolderGridLayout = () => (
   <AnimatedDiv variants={FadeContainer}>

@@ -1,8 +1,8 @@
 "use client";
 import { Text, Tooltip } from "@radix-ui/themes";
 import Link from "next/link";
-import LegalLinks from "./LegalLinks";
 import React from "react";
+import LegalLinks from "./LegalLinks";
 
 const FooterLinks = () => {
     const FooterLinks: { href: string; title: string; tooltip: string;}[] = [
@@ -55,7 +55,7 @@ const FooterLinks = () => {
         {index === FooterLinks.length - 1 &&<LegalLinks />}
               <Tooltip content={tooltip}>
     <li>
-        <Link href={href} aria-label={tooltip}  className="text-[#666] dark:text-[#888] hover:text-black dark:hover:text-white">
+        <Link href={href} aria-label={tooltip}  className="LinkText">
         <Text size="2">{title}</Text>
         </Link>
     </li>

@@ -1,8 +1,8 @@
 "use client"
-import { Box, DropdownMenu, Flex, Text } from "@radix-ui/themes";
-import { GoChevronDown } from 'react-icons/go';
-import { useState } from 'react';
+import { DropdownMenu, Text } from "@radix-ui/themes";
 import Link from "next/link";
+import { useState } from 'react';
+import { GoChevronDown } from 'react-icons/go';
 
 const LegalLinks = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,11 +14,15 @@ const LegalLinks = () => {
   return (
       <DropdownMenu.Root onOpenChange={handleOpenChange}>
         <DropdownMenu.Trigger>
-          <Text size="2" className="flex items-center text-[#666] dark:text-[#888] hover:text-black dark:hover:text-white justify-none">
+        <li>
+        <Link href={''}  className="LinkText">
+        <Text size="2" className="flex items-center gap-1">
             Legal
             <GoChevronDown
               className={`h-4 w-4 transition-transform transform ${isOpen ? "rotate-180" : ""}`} />
           </Text>
+        </Link>
+          </li>
         </DropdownMenu.Trigger>
         <DropdownMenu.Content>
           <Link href="/about"><DropdownMenu.Item shortcut="A">About US</DropdownMenu.Item></Link>

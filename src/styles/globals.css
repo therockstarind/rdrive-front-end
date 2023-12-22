@@ -82,3 +82,15 @@
     border-radius: var(--radius-4);
     overflow: hidden;
 }
+
+.HoverBG {
+    @apply hover:bg-[var(--gray-a3)] dark:hover:bg-[var(--gray-a5)];
+  }
+  
+.AppBar {
+    @apply fixed items-center bottom-3 md:bottom-1 z-30 w-full sm:max-w-xs md:max-w-sm lg:max-w-md border border-gray-400/30 rounded-[var(--radius-4)] bg-white dark:bg-black overflow-hidden;
+}
+
+.LinkText {
+    @apply text-[#666] dark:text-[#888] hover:text-black dark:hover:text-white;
+}

@@ -46,8 +46,8 @@ const Footer = () => {
                             <Text size="2">&copy; {new Date().getFullYear()}</Text>
                         </Flex>
                     </Link>
-                    <Flex aria-label="ThemeSwitcher" gap="2">
-                    <Button className="bg-transparent hover:bg-gray-100 dark:hover:bg-gray-400/30 text-[#666] dark:text-[#888] hover:text-black dark:hover:text-white" onClick={openCommandMenu} radius="full">
+                    <Flex aria-label="ThemeSwitcher" gap="2" align="center">
+                    <Button className="bg-transparent HoverBG LinkText" onClick={openCommandMenu} radius="full">
                             Command Menu
                             <Kbd size="3">{os === 'windows' ? 'Ctrl' : '⌘'}</Kbd>
                             <Kbd size="3">K</Kbd>
