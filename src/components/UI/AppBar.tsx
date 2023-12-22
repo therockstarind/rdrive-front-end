@@ -30,21 +30,25 @@ export default function AppBar() {
   const [selected, setSelected] = useState(getPathValue(pathname));
   const [showModal, setShowModal] = useState(false);
   return (
-    <main className="AppBar">
-      <CommandMenu showModal={showModal} setShowModal={setShowModal} />
+    <>
+            <CommandMenu showModal={showModal} setShowModal={setShowModal} />
+    <main className="flex justify-center">
       <Tabs 
         aria-label="AppBar Menu" 
         selectedKey={selected}
         variant="light"
+        color="primary"
         keyboardActivation="manual"
+        draggable
         classNames={{
-          base: 'flex flex-col',
-          tabList: "bg-transparent",
-          tab: "h-auto data-[hover-unselected=true]:opacity-80 text-black",
-          tabContent: "group-data-[selected=true]:text-green-400 text-black dark:text-white",
+          base: "AppBar flex flex-col",
+          tabList: "AppBarTabList  bg-white bg-opacity-70 dark:bg-opacity-70 backdrop-blur-md dark:bg-black",
+          tab: "h-auto data-[hover-unselected=true]:opacity-80 overflow-hidden",
+          tabContent: "",
           cursor: "",
           panel: "",
         }}
+  
       >
         <Tab key="Android" href="/"
           title={
@@ -89,5 +93,6 @@ export default function AppBar() {
         />
         </Tabs>
     </main>
+    </>
   );
 }

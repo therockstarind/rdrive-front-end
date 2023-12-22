@@ -88,8 +88,12 @@
   }
   
 .AppBar {
-    @apply fixed items-center bottom-3 md:bottom-1 z-30 w-full sm:max-w-sm lg:max-w-md border border-gray-400/30 rounded-[var(--radius-4)] bg-white dark:bg-black overflow-hidden;
+    @apply fixed items-center justify-center bottom-3 md:bottom-1 z-30 w-full px-1 sm:max-w-sm lg:max-w-md overflow-hidden;
 }
+.AppBarTabList {
+    @apply w-full border border-gray-400/30 rounded-[var(--radius-4)];
+}
+
 
 .LinkText {
     @apply text-[#666] dark:text-[#888] hover:text-black dark:hover:text-white;
