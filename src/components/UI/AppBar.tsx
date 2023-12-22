@@ -37,8 +37,8 @@ export default function AppBar() {
         selectedKey={selected}
         variant="light"
         keyboardActivation="manual"
-        fullWidth
         classNames={{
+          base: 'flex flex-col',
           tabList: "bg-transparent",
           tab: "h-auto data-[hover-unselected=true]:opacity-80 text-black",
           tabContent: "group-data-[selected=true]:text-green-400 text-black dark:text-white",
