@@ -23,7 +23,7 @@ export function Providers({children}: { children: React.ReactNode }) {
                   </div>
                 </main>
               <Footer />
-              <AppBar />
+              {/* <AppBar /> */}
           </div>
           </NextUIProvider>
         </Theme>
