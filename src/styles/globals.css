@@ -88,10 +88,10 @@
   }
   
 .AppBar {
-    @apply fixed items-center justify-center bottom-3 md:bottom-1 z-30 w-full px-1 sm:max-w-sm lg:max-w-md overflow-hidden;
+    @apply fixed items-center justify-center mx-auto bottom-3 md:bottom-1 z-30 w-full px-1 max-w-sm overflow-hidden;
 }
 .AppBarTabList {
-    @apply w-full border border-gray-400/30 rounded-[var(--radius-4)];
+    @apply w-full h-full max-w-sm justify-center items-center border border-gray-400/30 rounded-[var(--radius-4)] bg-white dark:bg-black overflow-x-auto;
 }
 
 

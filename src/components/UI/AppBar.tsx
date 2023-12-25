@@ -1,123 +1,80 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { BsAndroid2, BsApple, BsGooglePlay, BsWindows } from "react-icons/bs";
-import Link from "next/link";
-import { TbApps, TbDeviceGamepad2 } from "react-icons/tb";
-import { FaAppStoreIos, FaLinux } from "react-icons/fa";
-import { usePathname } from "next/navigation";
-import { Tab, Tabs } from "@nextui-org/tabs";
+import { Flex, Tabs, Text } from "@radix-ui/themes";
+import { motion } from "framer-motion";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { BsAndroid2, BsApple } from "react-icons/bs";
 import { GoSearch } from "react-icons/go";
-import CommandMenuButton from "../Command/Button";
-import { Flex, Text } from "@radix-ui/themes";
+import { TbApps, TbDeviceGamepad2 } from "react-icons/tb";
+import CommandMenu from "../Command/Menu";
 
 function getPathValue(pathname: string) {
   const segments = pathname.split("/").filter(Boolean).map(segment => segment.toLowerCase());
   const firstSegment = segments[0];
 
-  if (firstSegment === "apps") {
-    return "Apps";
-  } else if (firstSegment === "apple" || firstSegment === "icloud") {
-    return "Apple";
-  } else if (firstSegment === "games") {
-    return "Games";
-  } else {
-    return "Android";
+  switch (firstSegment) {
+    case "apps":
+      return "Apps";
+    case "apple":
+    case "icloud":
+      return "Apple";
+    case "games":
+      return "Games";
+    default:
+      return "Android";
   }
 }
 
 export default function AppBar() {
+  const router = useRouter();
   const pathname = usePathname();
+  const [showModal, setShowModal] = useState(false);
   const [selected, setSelected] = useState(getPathValue(pathname));
 
   useEffect(() => {
     setSelected(getPathValue(pathname));
   }, [pathname]);
 
-  let appsTab = {
-    key: "Apps",
-    link: "/Apps",
-    icon: <TbApps  />,
-  };
-
-  let gamesTab = {
-    key: "Games",
-    link: "/Games",
-    icon: <TbDeviceGamepad2  />,
-  };
-  
-  const segments = pathname.split("/").filter(Boolean).map(segment => segment.toLowerCase());
-
-  if (segments[0] === "apps") {
-    if (segments[1] === "mac-os") {
-      appsTab.icon = <FaAppStoreIos  />;
-    } else if (segments[1] === "linux") {
-      appsTab.icon = <FaLinux  />;
-    } else if (segments[1] === "windows") {
-      appsTab.icon = <BsWindows  />;
-    } else if (segments[1] === "android") {
-      appsTab.icon = <BsGooglePlay  />;
-    }
-  } else if (segments[0] === "games") {
-    if (segments[1] === "mac-os") {
-      gamesTab.icon = <FaAppStoreIos  />;
-    } else if (segments[1] === "linux") {
-      gamesTab.icon = <FaLinux  />;
-    } else if (segments[1] === "windows") {
-      gamesTab.icon = <BsWindows  />;
-    } else if (segments[1] === "android") {
-      gamesTab.icon = <BsGooglePlay  />;
-    }
-  }
-
-  let tabs = [
-    {
-      key: "Android",
-      link: "/",
-      icon: <BsAndroid2  />,
-    },
-    appsTab,
-    {
-      key: "",
-      link: "",
-      icon: <CommandMenuButton  />,
-    },
-    gamesTab,
-    {
-      key: "Apple",
-      link: "/Apple",
-      icon: <BsApple  />,
-    },
-  ];
-
   return (
-      <main className="flex justify-center">
-        <Tabs
-          aria-label="AppBar Bar"
-          items={tabs}
-          color="primary"
-          selectedKey={selected}
-          classNames={{
-            base: "AppBar flex flex-col",
-            tab: "h-full data-[hover-unselected=true]:opacity-80",
-            tabList: "AppBarTabList bg-white dark:bg-black",
-            tabContent: "dark:group-data-[selected=true]:text-white text-black dark:text-white",
-          }}
-        >
-          {(item) => (
-            <Tab
-              key={item.key}
-              aria-label={item.key}
-              title={
-                <Link href={item.link} passHref>
-                  <Flex direction="column" align="center">
-                      <Text size="7">{item.icon}</Text>
-                      <Text>{item.key}</Text>
-                  </Flex>
-                </Link>
-              }
-            />
-          )}
-        </Tabs>
-      </main>
+    <Tabs.Root defaultValue={selected} className="AppBar">
+      <CommandMenu showModal={showModal} setShowModal={setShowModal} />
+    <Tabs.List className="AppBarTabList">
+      <Tabs.Trigger value="Android" onClick={() => router.push('/')}>
+          <Flex direction="column" align="center">
+            <BsAndroid2 size={24} />
+            <Text>Android</Text>
+          </Flex>
+      </Tabs.Trigger>
+      <Tabs.Trigger value="Apps" onClick={() => router.push('/Apps')}>
+      <Flex direction="column" align="center">
+            <TbApps size={24} />
+            <Text>Apps</Text>
+          </Flex>
+      </Tabs.Trigger>
+      <Tabs.Trigger value="" onClick={() => setShowModal(true)}>
+      <motion.div whileHover={{ y: -3, transition: { duration: 0.2 } }}>
+            <Flex
+                direction="column"
+                align="center"
+                className="border border-gray-400/30 p-3 rounded-full"
+            >
+                <GoSearch size={24} />
+            </Flex>
+        </motion.div>
+      </Tabs.Trigger>
+      <Tabs.Trigger value="Games" onClick={() => router.push('/Games')}>
+      <Flex direction="column" align="center">
+            <TbDeviceGamepad2 size={24} />
+            <Text>Games</Text>
+          </Flex>
+      </Tabs.Trigger>
+      <Tabs.Trigger value="Apple" onClick={() => router.push('/Apple')}>
+      <Flex direction="column" align="center">
+            <BsApple size={24} />
+            <Text>Apple</Text>
+          </Flex>
+      </Tabs.Trigger>
+    </Tabs.List>
+    </Tabs.Root>
   );
 }
