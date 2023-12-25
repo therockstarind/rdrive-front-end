@@ -4,7 +4,7 @@ import React, { Dispatch, SetStateAction } from "react";
 import { Dialog, ScrollArea, Flex,Kbd, Box } from "@radix-ui/themes";
 import { GoSearch } from "react-icons/go";
 import CommandList from "./List";
-import { Input } from "@nextui-org/input";
+import { Input } from "@nextui-org/react";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
 export default function CommandMenu({
@@ -24,7 +24,7 @@ export default function CommandMenu({
         </ScrollArea>
       <Flex justify="between" align="center" p="3" className="border-t border-gray-400/30">
           <Flex>
-          <Kbd>Esc</Kbd>
+          <Kbd onClick={() => setShowModal(false)} className=" cursor-no-drop">Esc</Kbd>
           </Flex>
           <Flex align="center" gap="3">
             <Kbd>Tab</Kbd>

@@ -1,5 +1,5 @@
 "use client"
-import { Image } from "@nextui-org/image";
+import { Image } from "@nextui-org/react";
 import { Card, Flex, Grid, Text } from "@radix-ui/themes";
 import { motion } from "framer-motion";
 import Link from "next/link";

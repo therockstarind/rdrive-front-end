@@ -1,5 +1,5 @@
 "use client";
-import { Tab, Tabs } from "@nextui-org/tabs";
+import { Tab, Tabs } from "@nextui-org/react";
 import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
 import { BsFillSunFill, BsMoon } from 'react-icons/bs';

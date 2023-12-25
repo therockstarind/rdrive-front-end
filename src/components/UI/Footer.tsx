@@ -9,6 +9,7 @@ import CommandMenu from "../Command/Menu";
 import FooterLinks from "./FooterLinks";
 import SocialFooter from "./SocialFooter";
 import ThemeSwitcher from "./ThemeSwitcher";
+import { SiteLogo, SiteTile } from "®/config/site";
 
 const Footer = () => {
     const [showModal, setShowModal] = useState(false);
@@ -25,7 +26,7 @@ const Footer = () => {
                 <Flex justify="between" display={{initial: 'flex', sm: 'none'}}>
                     <Link href="/" passHref>
                         <Flex aria-label="RDRIVE Logo" gap="1" className="items-center">
-                            <Image src="/icons/rdrive.png" alt="RDRIVE" width={35} height={35} /> 
+                            <Image src={SiteLogo} alt={SiteTile} width={35} height={35} priority/> 
                             <Text size="2">&copy; {new Date().getFullYear()}</Text>
                         </Flex>
                     </Link>
@@ -42,7 +43,7 @@ const Footer = () => {
                 <Flex justify="between" align="center" display={{initial: 'none', sm: 'flex'}}>
                     <Link href="/" passHref>
                         <Flex aria-label="RDRIVE Logo" gap="1" className="items-center">
-                            <Image src="/icons/rdrive.png" alt="RDRIVE" width={35} height={35} /> 
+                            <Image src={SiteLogo} alt={SiteTile} width={35} height={35} priority/> 
                             <Text size="2">&copy; {new Date().getFullYear()}</Text>
                         </Flex>
                     </Link>

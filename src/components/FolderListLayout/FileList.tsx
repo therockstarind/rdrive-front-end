@@ -1,5 +1,5 @@
 "use client";
-import { Listbox, ListboxItem } from "@nextui-org/listbox";
+import { Listbox, ListboxItem } from "@nextui-org/react";
 import { Box, Flex, Text } from "@radix-ui/themes";
 import { BsFillRecordCircleFill } from "react-icons/bs";
 import { FaArchive, FaFolder } from "react-icons/fa";
@@ -80,7 +80,7 @@ return (
   
 <Listbox aria-label="File List">
       {List.map((list) => (
-        <ListboxItem key={list.title} showDivider>
+        <ListboxItem key={list.title} textValue={list.title} showDivider>
         <Flex className="grid grid-cols-10 items-center">
             <Flex className="flex col-span-9 md:col-span-6" align="center" gap="2">
                 <Box>{list.icon}</Box>

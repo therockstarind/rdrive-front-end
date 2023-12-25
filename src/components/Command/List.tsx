@@ -7,7 +7,7 @@ import { FaRupeeSign } from 'react-icons/fa';
 import { MdPhonelinkSetup } from 'react-icons/md';
 import { SiGithubsponsors } from 'react-icons/si';
 import { TbApps, TbDeviceGamepad2 } from 'react-icons/tb';
-import {  Listbox,  ListboxItem, ListboxSection} from "@nextui-org/listbox";
+import {  Listbox,  ListboxItem, ListboxSection} from "@nextui-org/react";
 
 const CommandList = () => {
   const size = 'w-5 h-5';
@@ -64,10 +64,10 @@ const CommandList = () => {
   ];
 
   return (
-<Listbox aria-label="Command List">
+<Listbox aria-label="Command List" >
     <ListboxSection title="Suggestions"> 
       {links.map((link, index) => (
-        <ListboxItem key={link.title} href={link.href} showDivider description={<div className="line-clamp-1">{link.description}</div>} startContent={link.icon}>
+        <ListboxItem key={link.title} href={link.href} textValue={link.title} showDivider description={<div className="line-clamp-1">{link.description}</div>} startContent={link.icon}>
                   <Text size="2" className="line-clamp-1">
                     {link.title}
                   </Text>

@@ -5,7 +5,7 @@ import '@radix-ui/themes/styles.css';
 import '®/styles/globals.css'
 import Navbar from "®/components/UI/Navbar";
 import Footer from "®/components/UI/Footer";
-import { NextUIProvider } from "@nextui-org/system";
+import { NextUIProvider } from "@nextui-org/react";
 import AppBar from "®/components/UI/AppBar";
 import { useRouter } from "next/navigation";
 
