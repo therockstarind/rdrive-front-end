@@ -4,7 +4,6 @@ import { Theme } from "@radix-ui/themes";
 import '@radix-ui/themes/styles.css';
 import { ThemeProvider } from "next-themes";
 import { useRouter } from "next/navigation";
-import AppBar from "®/components/UI/AppBar";
 import Footer from "®/components/UI/Footer";
 import Navbar from "®/components/UI/Navbar";
 import '®/styles/globals.css';
@@ -23,7 +22,6 @@ export function Providers({children}: { children: React.ReactNode }) {
                   </div>
                 </main>
               <Footer />
-              <AppBar/>
           </div>
           </NextUIProvider>
         </Theme>

@@ -1,13 +1,11 @@
 "use client";
-import React from 'react';
-import { Table, Flex, Text } from '@radix-ui/themes';
-import Link from 'next/link';
-import { BsFillUnlockFill, BsUsbSymbol, BsApple } from 'react-icons/bs';
+import { Listbox, ListboxItem, ListboxSection } from "@nextui-org/react";
+import { Text } from '@radix-ui/themes';
+import { BsApple, BsFillUnlockFill, BsUsbSymbol } from 'react-icons/bs';
 import { FaRupeeSign } from 'react-icons/fa';
 import { MdPhonelinkSetup } from 'react-icons/md';
 import { SiGithubsponsors } from 'react-icons/si';
 import { TbApps, TbDeviceGamepad2 } from 'react-icons/tb';
-import {  Listbox,  ListboxItem, ListboxSection} from "@nextui-org/react";
 
 const CommandList = () => {
   const size = 'w-5 h-5';
@@ -24,6 +22,12 @@ const CommandList = () => {
       title: 'Games',
       description: 'Download games for Android, MacOS, Windows, and Linux',
       icon: <TbDeviceGamepad2 className={size} />,
+    },
+    {
+      href: '/Apple',
+      title: 'Apple',
+      description: 'Download Apple IOS for iPhone, iPad, iPod Touch, Apple TV, and Mac Studio',
+      icon: <BsApple className={size} />,
     },
     {
       href: '/FRP',

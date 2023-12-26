@@ -1,15 +1,23 @@
-
+/* Tailwind CSS Imports */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-  
-body::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
+
+/* General Styles */
+* {
+    -webkit-tap-highlight-color: transparent;
 }
+
+body::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
 .overFlow_x {
-  overflow-x: hidden;
-}  
+    overflow-x: hidden;
+}
+
+/* Footer Links Styles */
 .footer_FooterLinks {
     display: flex;
     list-style-type: none;
@@ -26,7 +34,17 @@ body::-webkit-scrollbar {
         grid-template-columns: 1fr 1fr;
         gap: 2px;
     }
+
+    .socialFooters {
+        margin-top: 14px;
+        order: 2;
+        grid-column: span 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
+
 @media (min-width: 600px) {
     .footer_FooterLinks {
         grid-template-columns: 1fr 1fr 1fr;
@@ -34,31 +52,16 @@ body::-webkit-scrollbar {
     }
 }
 
-@media (max-width: 767px) {
-.socialFooters {
-    margin-top: 14px;
-    order: 2;
-    grid-column: span 2;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-}
-
-* {
-    -webkit-tap-highlight-color: transparent;
-}
-
-/* Costume styles for RadixUI Overwrite */
-
+/* RadixUI Custom Styles */
 @media screen and (max-width: 767px) {
-    .CommandMenu{
+    .CommandMenu {
         position: fixed;
         bottom: 0;
         border-radius: 10px 10px 0 0;
     }
 }
 
+/* Component Styles */
 .ListCard {
     background-color: var(--color-panel);
     border-width: 1px;
@@ -69,31 +72,37 @@ body::-webkit-scrollbar {
 
 .HoverBG {
     @apply hover:bg-[var(--gray-a3)] dark:hover:bg-[var(--gray-a5)];
-  }
-  
+}
+
 .AppBar {
     @apply fixed w-full bottom-0 sm:bottom-1 z-30 max-w-md border-t sm:border border-gray-400/30 sm:rounded-[var(--radius-4)] p-0.5 bg-white dark:bg-black;
 }
-.AppBarTabList {
-    @apply h-full  justify-between shadow-none;
-}
 
+.AppBarTabList {
+    @apply h-full justify-between shadow-none;
+}
 
 .LinkText {
     @apply text-[#666] dark:text-[#888] hover:text-black dark:hover:text-white;
 }
 
 .Border {
-  @apply border border-gray-400/30 rounded-[var(--radius-4)];
+    @apply border border-gray-400/30 rounded-[var(--radius-4)];
 }
 
+.SearchButton {
+    @apply Border w-full max-w-md justify-start items-center;
+}
 
+.Navbar {
+    @apply w-full bottom-0 md:top-0 z-40 justify-between items-center bg-white bg-opacity-70 dark:bg-opacity-70 backdrop-blur-md border-t md:border-b border-gray-400/30 dark:bg-black select-none;
+}
 
+/* Tailwind Utilities */
 @layer utilities {
-    /* Hiding the arrows in the input number */
     input[type="number"]::-webkit-inner-spin-button,
     input[type="number"]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
+        -webkit-appearance: none;
+        margin: 0;
     }
-  }
+}
