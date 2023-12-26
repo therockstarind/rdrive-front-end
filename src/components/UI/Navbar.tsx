@@ -1,7 +1,6 @@
 "use client";
 
-import { Avatar, Box, Flex } from "@radix-ui/themes";
-import Image from "next/image";
+import { Avatar, Flex } from "@radix-ui/themes";
 import Link from "next/link";
 import { SiteLogo, SiteTitle } from "®/config/site";
 import CommandMenuButton from "../Command/Button";

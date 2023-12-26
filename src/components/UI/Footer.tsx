@@ -1,15 +1,14 @@
 "use client";
 import { Avatar, Button, Flex, Kbd, Section, Text } from "@radix-ui/themes";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
+import { SiteLogo, SiteTitle } from "®/config/site";
 import useDeviceOS from "®/hooks/useDeviceOS";
 import CommandMenu from "../Command/Menu";
 import FooterLinks from "./FooterLinks";
 import SocialFooter from "./SocialFooter";
 import ThemeSwitcher from "./ThemeSwitcher";
-import { SiteLogo, SiteTitle } from "®/config/site";
 
 const Footer = () => {
     const [showModal, setShowModal] = useState(false);
