@@ -4,21 +4,20 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { GoSearch } from "react-icons/go";
 import CommandMenu from "./Menu";
+import { Button } from "@nextui-org/react";
 
 const CommandMenuButton = () => {
     const [showModal, setShowModal] = useState(false);
     return (
     <main>
-        <motion.div whileHover={{ y: -3, transition: { duration: 0.2 } }}>
-            <Flex
-                direction="column"
-                align="center"
-                className="Border p-2"
-                onClick={() => setShowModal(true)}
-            >
-                <GoSearch size={24} />
-            </Flex>
-        </motion.div>
+    <Button
+      isIconOnly
+      className="bg-transparent Border HoverBG"
+      onPress={() => setShowModal(true)}
+      aria-label="Search Button"
+    >
+      <GoSearch  size={20}/>       
+    </Button>
         <CommandMenu showModal={showModal} setShowModal={setShowModal} />
     </main>
     )
