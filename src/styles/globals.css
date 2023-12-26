@@ -1,35 +1,15 @@
 
-@layer base {
-    @import 'tailwindcss/base';
-  }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
   
-  @layer components {
-    @import 'tailwindcss/components';
-  }
-  
-  @layer utilities {
-    @import 'tailwindcss/utilities';
-  }
-  
-  @layer radix_ui {
-    @import '@radix-ui/themes/styles.css';
-  }
-  
-  @layer tw_base, radix_ui, tw_components, tw_utilities;
-  
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-  
-  body,
-  html {
-    overflow-x: hidden;
-    scroll-behavior: auto;
-  }
-  body::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
-  }
+body::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+.overFlow_x {
+  overflow-x: hidden;
+}  
 .footer_FooterLinks {
     display: flex;
     list-style-type: none;
@@ -92,7 +72,7 @@
   }
   
 .AppBar {
-    @apply fixed w-full bottom-0 sm:bottom-0.5 z-30 max-w-md border-t sm:border border-gray-400/30 sm:rounded-[var(--radius-4)] p-0.5 bg-white dark:bg-black;
+    @apply fixed w-full bottom-0 sm:bottom-1 z-30 max-w-md border-t sm:border border-gray-400/30 sm:rounded-[var(--radius-4)] p-0.5 bg-white dark:bg-black;
 }
 .AppBarTabList {
     @apply h-full  justify-between shadow-none;

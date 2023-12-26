@@ -9,7 +9,7 @@ import CommandMenu from "../Command/Menu";
 import FooterLinks from "./FooterLinks";
 import SocialFooter from "./SocialFooter";
 import ThemeSwitcher from "./ThemeSwitcher";
-import { SiteLogo, SiteTile } from "®/config/site";
+import { SiteLogo, SiteTitle } from "®/config/site";
 
 const Footer = () => {
     const [showModal, setShowModal] = useState(false);
@@ -22,11 +22,11 @@ const Footer = () => {
 
     return (
         <footer className="w-full border-t border-gray-400/30 items-center px-4 md:px-1 mb-12 md:mb-0">
-            <div className="mx-auto w-full max-w-7xl my-6" >
+            <div className="mx-auto w-full max-w-7xl my-4" >
                 <Flex justify="between" display={{initial: 'flex', sm: 'none'}}>
                     <Link href="/" passHref>
                         <Flex aria-label="RDRIVE Logo" gap="1" className="items-center">
-                            <Image src={SiteLogo} alt={SiteTile} width={35} height={35} priority/> 
+                            <Image src={SiteLogo} alt={SiteTitle} width={35} height={35} priority/> 
                             <Text size="2">&copy; {new Date().getFullYear()}</Text>
                         </Flex>
                     </Link>
@@ -43,7 +43,7 @@ const Footer = () => {
                 <Flex justify="between" align="center" display={{initial: 'none', sm: 'flex'}}>
                     <Link href="/" passHref>
                         <Flex aria-label="RDRIVE Logo" gap="1" className="items-center">
-                            <Image src={SiteLogo} alt={SiteTile} width={35} height={35} priority/> 
+                            <Image src={SiteLogo} alt={SiteTitle} width={35} height={35} priority/> 
                             <Text size="2">&copy; {new Date().getFullYear()}</Text>
                         </Flex>
                     </Link>

@@ -7,6 +7,7 @@ import { BsAndroid2, BsApple } from "react-icons/bs";
 import { GoSearch } from "react-icons/go";
 import { TbApps, TbDeviceGamepad2 } from "react-icons/tb";
 import CommandMenu from "../Command/Menu";
+import { Button } from "@nextui-org/react";
 
 function getPathValue(pathname: string) {
   const segments = pathname.split("/").filter(Boolean).map(segment => segment.toLowerCase());
@@ -53,13 +54,14 @@ export default function AppBar() {
       </Tabs.Trigger>
       <Tabs.Trigger value="" onClick={() => setShowModal(true)}>
       <motion.div whileHover={{ y: -3, transition: { duration: 0.2 } }}>
-            <Flex
-                direction="column"
-                align="center"
-                className="border border-gray-400/30 p-3 rounded-full"
-            >
-                <GoSearch size={24} />
-            </Flex>
+      <Button
+      isIconOnly
+      className="bg-transparent Border HoverBG"
+      onPress={() => setShowModal(true)}
+      aria-label="Search Button"
+    >
+      <GoSearch  size={24}/>       
+    </Button>
         </motion.div>
       </Tabs.Trigger>
       <Tabs.Trigger value="Games" onClick={() => router.push('/Games')}>
