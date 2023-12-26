@@ -19,9 +19,9 @@ const CommandMenuButton = () => {
     }
   }
     return (
-      <Flex className="w-full" justify="center">
+      <Flex className="w-full overflow-hidden" justify="center" aria-label="Search Button">
         <Button variant="light" className="SearchButton" onPress={() => setShowModal(true)} startContent={<GoSearch  size={20}/>}>
-          <Text className="line-clamp-1" size="2" color="gray">{title}</Text>
+          <h1 className="line-clamp-1" color="gray">{title}</h1>
         </Button>
         <CommandMenu showModal={showModal} setShowModal={setShowModal} />
       </Flex>

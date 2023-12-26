@@ -1,5 +1,5 @@
 "use client";
-import { Button, Flex, Kbd, Section, Text } from "@radix-ui/themes";
+import { Avatar, Button, Flex, Kbd, Section, Text } from "@radix-ui/themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -26,7 +26,7 @@ const Footer = () => {
                 <Flex justify="between" display={{initial: 'flex', sm: 'none'}}>
                     <Link href="/" passHref>
                         <Flex aria-label="RDRIVE Logo" gap="1" className="items-center">
-                            <Image src={SiteLogo} alt={SiteTitle} width={35} height={35} priority/> 
+                            <Avatar src={SiteLogo} alt={SiteTitle} fallback="R" />
                             <Text size="2">&copy; {new Date().getFullYear()}</Text>
                         </Flex>
                     </Link>
@@ -43,7 +43,7 @@ const Footer = () => {
                 <Flex justify="between" align="center" display={{initial: 'none', sm: 'flex'}}>
                     <Link href="/" passHref>
                         <Flex aria-label="RDRIVE Logo" gap="1" className="items-center">
-                            <Image src={SiteLogo} alt={SiteTitle} width={35} height={35} priority/> 
+                            <Avatar src={SiteLogo} alt={SiteTitle} fallback="R" /> 
                             <Text size="2">&copy; {new Date().getFullYear()}</Text>
                         </Flex>
                     </Link>
