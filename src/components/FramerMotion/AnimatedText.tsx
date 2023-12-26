@@ -1,3 +1,4 @@
+"use client";
 import { AnimatedTAGProps } from "®/lib/types";
 import { motion } from "framer-motion";
 

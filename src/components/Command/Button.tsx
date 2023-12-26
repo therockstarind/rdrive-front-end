@@ -13,7 +13,7 @@ const CommandMenuButton = () => {
             <Flex
                 direction="column"
                 align="center"
-                className="border border-gray-400/30 p-3 rounded-full"
+                className="Border p-2"
                 onClick={() => setShowModal(true)}
             >
                 <GoSearch size={24} />
