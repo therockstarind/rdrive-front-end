@@ -25,7 +25,6 @@ body::-webkit-scrollbar {
     align-items: center;
     padding: 0;
     width: 100%;
-    margin: -10px 0 0;
 }
 
 @media (max-width: 767px) {
@@ -91,11 +90,11 @@ body::-webkit-scrollbar {
 }
 
 .SearchButton {
-    @apply Border w-full max-w-md justify-start items-center;
+    @apply Border w-full max-w-lg justify-start items-center;
 }
 
 .Navbar {
-    @apply w-full bottom-0 md:top-0 z-40 justify-between items-center bg-white bg-opacity-70 dark:bg-opacity-70 backdrop-blur-md border-t md:border-b border-gray-400/30 dark:bg-black select-none;
+    @apply w-full bottom-0 md:top-0 z-40 justify-center items-center bg-white bg-opacity-70 dark:bg-opacity-70 backdrop-blur-md border-t md:border-b border-gray-400/30 dark:bg-black select-none;
 }
 
 /* Tailwind Utilities */

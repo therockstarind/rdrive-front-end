@@ -3,6 +3,7 @@ import { Button } from "@nextui-org/react";
 import { Flex, Text } from "@radix-ui/themes";
 import { useState } from "react";
 import { LiaSearchSolid } from "react-icons/lia";
+import { MdKeyboardVoice } from "react-icons/md";
 
 
 import { usePathname } from "next/navigation";
@@ -21,9 +22,11 @@ const CommandMenuButton = () => {
     }
   }
     return (
-      <Flex className="w-full overflow-hidden" justify="center" aria-label="Search Button">
+      <Flex className="w-full overflow-hidden" justify="center" aria-label="Search Button" gap="3" py="1">
         <Button variant="light" className="SearchButton" onPress={() => setShowModal(true)} startContent={<LiaSearchSolid size={20} />}>
           <Text className="line-clamp-1" color="gray">{title}</Text>
+        </Button>
+        <Button isIconOnly variant="light" className="Border hidden sm:flex p-0.5" startContent={<MdKeyboardVoice size={20}/>}>
         </Button>
         <CommandMenu showModal={showModal} setShowModal={setShowModal} />
       </Flex>

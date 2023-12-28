@@ -46,7 +46,7 @@ const ThemeSwitcher: React.FC = () => {
       classNames={{ cursor: 'ListCard !rounded-full', tabContent: 'group-data-[selected=true]:text-none text-black dark:text-white'}}
     >
       {tabs.map((item) => (
-        <Tab key={item.theme} title={item.icon} aria-label={item.theme} className=''/>
+        <Tab key={item.theme} title={item.icon} aria-label={item.theme}/>
       ))}
     </Tabs>
   );
