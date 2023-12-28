@@ -1,11 +1,11 @@
 "use client";
 
-import React, { Dispatch, SetStateAction } from "react";
-import { Dialog, ScrollArea, Flex, Box } from "@radix-ui/themes";
+import { Input } from "@nextui-org/react";
+import { Box, Dialog, Flex, Kbd, ScrollArea } from "@radix-ui/themes";
+import { Dispatch, SetStateAction } from "react";
+import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 import { GoSearch } from "react-icons/go";
 import CommandList from "./List";
-import { Input, Kbd } from "@nextui-org/react";
-import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
 export default function CommandMenu({
   showModal,
@@ -22,15 +22,19 @@ export default function CommandMenu({
         <ScrollArea type="auto" scrollbars="vertical" className="h-[60vh] sm:h-[45vh]">
               <CommandList />
         </ScrollArea>
-      <Flex justify="between" align="center" p="3" className="border-t border-gray-400/30 cursor-default">
+      <Flex justify="between" align="center" p="3" className="border-t border-gray-400/30">
           <Flex>
-          <Kbd onClick={() => setShowModal(false)} keys={['escape']} className="text-base"/>
+          <Kbd onClick={() => setShowModal(false)} className=" cursor-no-drop">Esc</Kbd>
           </Flex>
           <Flex align="center" gap="3">
-            <Kbd keys={['tab']} className="text-base"/>
-            <Kbd keys={['up']} className="text-base"/>
-            <Kbd keys={['down']} className="text-base"/>
-            <Kbd keys={['enter']} className="text-base"/>
+            <Kbd>Tab</Kbd>
+            <Kbd>
+              <Box p="1" ><FaArrowUp /></Box>
+            </Kbd>
+            <Kbd>
+              <Box p="1" ><FaArrowDown /></Box>
+            </Kbd>
+            <Kbd>Enter</Kbd>
           </Flex>        
       </Flex>  
       </Dialog.Content>
