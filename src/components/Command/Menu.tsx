@@ -24,13 +24,13 @@ export default function CommandMenu({
         </ScrollArea>
       <Flex justify="between" align="center" p="3" className="border-t border-gray-400/30 cursor-default">
           <Flex>
-          <Kbd onClick={() => setShowModal(false)} keys={['escape']} />
+          <Kbd onClick={() => setShowModal(false)} keys={['escape']} className="text-base"/>
           </Flex>
           <Flex align="center" gap="3">
-            <Kbd keys={['tab']} />
-            <Kbd keys={['up']} />
-            <Kbd keys={['down']} />
-            <Kbd keys={['enter']} />
+            <Kbd keys={['tab']} className="text-base"/>
+            <Kbd keys={['up']} className="text-base"/>
+            <Kbd keys={['down']} className="text-base"/>
+            <Kbd keys={['enter']} className="text-base"/>
           </Flex>        
       </Flex>  
       </Dialog.Content>
