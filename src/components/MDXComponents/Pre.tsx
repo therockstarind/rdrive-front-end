@@ -5,10 +5,14 @@ import CodeTitle from "./CodeTitle";
 
 const Pre = ({ children }: { children?: ReactElement | undefined }) => {
   const getClassName = () => {
-    const language = children?.props['data-language'];
-    console.log("Extracted language:", language);
-    return language || "";
+    const className = children?.props?.className;
+    return className ? className.replace("language-", "") : "";
   };
+  // const getClassName = () => {
+  //   const language = children?.props['data-language'];
+  //   console.log("Extracted language:", language);
+  //   return language || "";
+  // };
 
   return (
 <main className="border border-gray-400/30 !rounded-md my-4">

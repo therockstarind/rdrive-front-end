@@ -1,3 +1,4 @@
+"use client";
 export default function YouTube({ id }: { id: string }) {
   return (
     <div className="max-w-full overflow-hidden relative pb-[56.25%] h-0 rounded-lg">

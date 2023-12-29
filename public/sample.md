@@ -1,21 +1,48 @@
-# Custom Markdown Example
+# Title
 
-This is a sample Markdown document to demonstrate various elements like text, code blocks, and paragraphs.
+Here is some regular text. This is an introduction to the page.
 
-## Introduction
+## Subtitle
 
-Markdown is a lightweight markup language with plain-text formatting syntax. It's designed so that it can be converted to HTML and many other formats. It's very popular among writers, developers, and content creators for its simplicity and flexibility.
+This is a smaller subtitle.
 
-## Code Example
+Here is some code in a `normal` code block:
 
-Here's an example of a code block in JavaScript:
+```
+1. let x = 10;
+2. console.log(x);
 
-```javascript
-function greet(name) {
-  console.log("Hello, " + name + "!");
-}
-
-greet("World");
 ```
 
-**Note**: Be aware that the triple backticks used to delimit the code block in the Markdown example above might be interpreted as closing the code block in this response. When using this in a Markdown editor or viewer, it should display correctly.
+And here is some TSX code:
+
+```tsx
+import React from 'react';
+
+const App = () => {
+  return (
+    <div>
+      Hello, world!
+    </div>
+  );
+};
+
+export default App;
+
+```
+
+Finally, here's some JSX code:
+
+```jsx
+var HelloMessage = React.createClass({
+  render: function() {
+    return <div>Hello {this.props.name}</div>;
+  }
+});
+
+ReactDOM.render(<HelloMessage name="John" />, mountNode);
+
+```
+> This is a blockquote.
+
+[Click to watch the video](https://www.youtube.com/watch?v=YHCKNwnQmdA)

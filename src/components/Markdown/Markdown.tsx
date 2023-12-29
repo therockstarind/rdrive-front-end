@@ -1,10 +1,10 @@
+"use client";
 import { useState, useEffect, FC } from 'react';
 import { MDXRemote } from 'next-mdx-remote';
 import MDXComponents from '../MDXComponents';
 import { serialize } from 'next-mdx-remote/serialize';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypePrettyCode from 'rehype-pretty-code';
 
 interface MarkdownPreviewProps {
   path: string;
@@ -12,6 +12,12 @@ interface MarkdownPreviewProps {
 
 const Markdown: FC<MarkdownPreviewProps> = ({ path }) => {
   const [mdxSource, setMdxSource] = useState<any>(null);
+/** @type {import('rehype-pretty-code').Options} */
+const options = {
+  theme: '',
+
+};
+ 
   useEffect(() => {
     const fetchMarkdown = async () => {
       try {
@@ -23,8 +29,7 @@ const Markdown: FC<MarkdownPreviewProps> = ({ path }) => {
             rehypePlugins: [
                 rehypeSlug,
                 [rehypeAutolinkHeadings, { behaviour: "wrap" }],
-                [rehypePrettyCode, {theme: 'dracula'}],
-              ],
+            ],
             development: process.env.NODE_ENV === "development"
           },
         });
@@ -38,10 +43,11 @@ const Markdown: FC<MarkdownPreviewProps> = ({ path }) => {
   }, [path]);
 
   return (
-    <main className="markdown-body">
+    <main className="prose dark:prose-invert prose-fuchsia">
         {mdxSource ? <MDXRemote {...mdxSource} components={MDXComponents} /> : ''}
     </main>
   );
 };
 
 export default Markdown;
+

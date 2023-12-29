@@ -1,3 +1,4 @@
+"use client";
 import { BsFileEarmarkCodeFill } from "react-icons/bs";
 import {
   SiCss3,

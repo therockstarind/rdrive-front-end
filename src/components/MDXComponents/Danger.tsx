@@ -1,3 +1,4 @@
+"use client";
 type Props = { title?: string; text: string };
 
 export default function Danger({ title, text }: Props) {

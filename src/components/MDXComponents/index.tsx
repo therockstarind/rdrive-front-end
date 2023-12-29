@@ -1,11 +1,10 @@
+"use client";
 import Code from "./Code";
-import CodeSandbox from "./CodeSandbox";
 import CodeTitle from "./CodeTitle";
 import Danger from "./Danger";
 import EmbedBlog from "./EmbedBlog";
 import Figcaption from "./Figcaption";
 import Pre from "./Pre";
-import Step from "./Step";
 import Tip from "./Tip";
 import Title from "./Title";
 import UrlMetaInfo from "./UrlMetaInfo";
@@ -18,8 +17,6 @@ const MDXComponents = {
   Danger,
   CodeTitle,
   Tip,
-  Step,
-  CodeSandbox,
   YouTube,
   EmbedBlog,
   UrlMetaInfo,
