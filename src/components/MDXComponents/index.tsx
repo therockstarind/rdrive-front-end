@@ -4,6 +4,7 @@ import CodeTitle from "./CodeTitle";
 import Danger from "./Danger";
 import EmbedBlog from "./EmbedBlog";
 import Figcaption from "./Figcaption";
+import IMG from "./Image";
 import Pre from "./Pre";
 import Tip from "./Tip";
 import Title from "./Title";
@@ -23,6 +24,7 @@ const MDXComponents = {
   pre: Pre,
   code: Code,
   Title,
+  img: IMG,
 };
 
 export default MDXComponents;

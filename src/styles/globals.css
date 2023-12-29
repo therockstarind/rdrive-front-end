@@ -129,7 +129,5 @@ td {
 }
 
 .prose :where(img):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-    margin-top: 0;
-    margin-bottom: 0;
     border-radius: var(--radius-4);
 }
