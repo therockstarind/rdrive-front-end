@@ -112,3 +112,18 @@ body::-webkit-scrollbar {
 .prose :where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
     background-color: transparent;
 }
+
+table {
+    @apply border border-[var(--tw-prose-th-borders)] rounded-[var(--radius-4)] flex flex-col;
+}
+thead {
+    @apply w-full flex flex-col;
+}
+tbody {
+    @apply w-full flex flex-col;
+}
+tr,
+th,
+td {
+    @apply  w-full flex justify-around;
+}
