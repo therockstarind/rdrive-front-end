@@ -1,11 +1,11 @@
 "use client";
-import { Image } from "@nextui-org/react";
-import { Card, Flex } from "@radix-ui/themes";
+import { Card, Image } from "@nextui-org/react";
+import { Flex } from "@radix-ui/themes";
 
 const ImageCard = () => {
 return (
   // <AnimatedDiv variants={popUpFromBottomForText}>
-    <Card size={{ initial: "2", sm: "4" }} aria-label="Xiaomi-12-Pro-(Dimensity-Edition)">
+  <Card className="FolderGridCard bg-content1-none sm:p-[var(--space-6)]" isHoverable isPressable  aria-label="Xiaomi-12-Pro-(Dimensity-Edition)">
             <Flex display="flex" justify="center" align="center" className="h-52 w-52 mx-auto">
               <Image
                 src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1666344481.20013313.png"

@@ -96,6 +96,9 @@ body::-webkit-scrollbar {
 .Navbar {
     @apply w-full bottom-0 md:top-0 z-40 justify-center items-center bg-white bg-opacity-70 dark:bg-opacity-70 backdrop-blur-md border-t md:border-b border-gray-400/30 dark:bg-black select-none;
 }
+.FolderGridCard {
+    @apply block flex-row shadow-none Border w-full p-[var(--space-4)];
+}
 
 /* Tailwind Utilities */
 @layer utilities {

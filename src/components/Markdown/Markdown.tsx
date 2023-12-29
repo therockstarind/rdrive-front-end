@@ -12,11 +12,6 @@ interface MarkdownPreviewProps {
 
 const Markdown: FC<MarkdownPreviewProps> = ({ path }) => {
   const [mdxSource, setMdxSource] = useState<any>(null);
-/** @type {import('rehype-pretty-code').Options} */
-const options = {
-  theme: '',
-
-};
  
   useEffect(() => {
     const fetchMarkdown = async () => {
@@ -43,7 +38,7 @@ const options = {
   }, [path]);
 
   return (
-    <main className="prose dark:prose-invert prose-fuchsia">
+    <main className="max-w-full prose dark:prose-invert prose-fuchsia">
         {mdxSource ? <MDXRemote {...mdxSource} components={MDXComponents} /> : ''}
     </main>
   );
