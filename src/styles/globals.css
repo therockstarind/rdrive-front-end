@@ -128,6 +128,15 @@ td {
     @apply  w-full flex justify-around;
 }
 
-.prose :where(img):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+.prose img {
     border-radius: var(--radius-4);
+}
+
+
+pre code.hljs {
+    @apply  bg-white dark:text-white dark:bg-black;
+}
+
+.prose pre {
+    @apply m-0;
 }

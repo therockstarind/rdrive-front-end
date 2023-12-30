@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import Footer from "®/components/UI/Footer";
 import Navbar from "®/components/UI/Navbar";
 import '®/styles/globals.css';
-import '®/styles/markdown-github.css';
 
 export function Providers({children}: { children: React.ReactNode }) {
   const router = useRouter();
