@@ -3,20 +3,11 @@ import { Snippet } from "@nextui-org/react";
 import { ReactElement, useEffect, useRef } from "react";
 import { MdOutlineContentCopy } from "react-icons/md";
 import CodeTitle from "./CodeTitle";
-import hljs from 'highlight.js';
-import 'highlight.js/styles/github.css';
 
 const Pre = ({ children }: { children?: ReactElement | undefined }) => {
-  const codeRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    if (codeRef.current) {
-      hljs.highlightElement(codeRef.current);
-    }
-  }, [children]);
   const getClassName = () => {
-    const className = children?.props?.className;
-    return className ? className.replace("language-", "") : "";
+    const language = children?.props['data-language'];
+    return language || "";
   };
 
   return (
@@ -40,7 +31,7 @@ const Pre = ({ children }: { children?: ReactElement | undefined }) => {
   </div>
   <div className="border-b border-gray-400/30" />
   <pre>
-      <code ref={codeRef}>
+      <code>
         {children}
       </code>
   </pre>
