@@ -10,7 +10,7 @@ type Props = {
 
 export default function IMG({ src, alt, width, height  }: Props) {
     return (
-        <Image src={src} alt={alt} width={width} height={height} isBlurred/>
+        <Image src={src} alt={alt} width={width} height={height} isBlurred className="w-full rounded-[var(--radius-4)] mx-auto"/>
     );
 }
 

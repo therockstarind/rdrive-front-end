@@ -30,7 +30,7 @@ const Pre = ({ children }: { children?: ReactElement | undefined }) => {
     </div>
   </div>
   <div className="border-b border-gray-400/30" />
-  <pre>
+  <pre className="overflow-auto">
       <code>
         {children}
       </code>
