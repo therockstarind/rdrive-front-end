@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { BsAndroid2, BsApple } from "react-icons/bs";
 import { GoSearch } from "react-icons/go";
 import { TbApps, TbDeviceGamepad2 } from "react-icons/tb";
-import CommandMenu from "../Command/Menu";
+import CommandMenu from "./Command/Menu";
 import { Button } from "@nextui-org/react";
 
 function getPathValue(pathname: string) {

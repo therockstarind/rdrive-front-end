@@ -3,7 +3,7 @@
 import { Avatar, Flex } from "@radix-ui/themes";
 import Link from "next/link";
 import { SiteLogo, SiteTitle } from "®/config/site";
-import CommandMenuButton from "../Command/Button";
+import CommandMenuButton from "./Command/Button";
 
 
 const Navbar = () => {

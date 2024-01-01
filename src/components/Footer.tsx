@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 import { SiteLogo, SiteTitle } from "®/config/site";
 import useDeviceOS from "®/hooks/useDeviceOS";
-import CommandMenu from "../Command/Menu";
+import CommandMenu from "./Command/Menu";
 import FooterLinks from "./FooterLinks";
 import SocialFooter from "./SocialFooter";
 import ThemeSwitcher from "./ThemeSwitcher";

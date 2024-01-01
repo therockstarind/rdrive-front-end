@@ -2,7 +2,7 @@
 import { Card, Text, Tabs, Box, Flex, Heading, Avatar, Button, Checkbox, Popover, TextArea } from "@radix-ui/themes";
 import { CgReadme } from "react-icons/cg";
 import { LiaComment } from "react-icons/lia";
-import Markdown from "../Markdown/Markdown";
+import Markdown from "../Markdown";
 
 
 

@@ -1,11 +1,11 @@
 "use client";
 import { useState, useEffect, FC } from 'react';
 import { MDXRemote } from 'next-mdx-remote';
-import MDXComponents from '../MDXComponents';
 import { serialize } from 'next-mdx-remote/serialize';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from "rehype-pretty-code";
+import MDXComponents from './MDXPreview';
 interface MarkdownPreviewProps {
   path: string;
 }
@@ -59,7 +59,11 @@ const Markdown: FC<MarkdownPreviewProps> = ({ path }) => {
 
   return (
     <main className="max-w-none prose dark:prose-invert prose-h1:text-3xl md:prose-h1:text-4xl md:mx-4 prose-m-0">
-        {mdxSource ? <MDXRemote {...mdxSource} components={MDXComponents} /> : ''}
+        {mdxSource ? 
+        <MDXRemote {...mdxSource} components={MDXComponents} /> 
+        : 
+        ''
+        }
     </main>
   );
 };

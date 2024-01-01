@@ -1,6 +1,6 @@
 
 import Link from "next/link";
-import { GitHub, YouTube } from "../icons";
+import { GitHub, YouTube } from "./icons";
 
 const SocialFooter = () => {
     const socialIcons = [

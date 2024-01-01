@@ -1,6 +1,6 @@
 "use client";
 import { Flex } from "@radix-ui/themes";
-import Markdown from "®/components/Markdown/Markdown";
+import Markdown from "®/components/Markdown";
 
 export default function Terms() {
   return (
