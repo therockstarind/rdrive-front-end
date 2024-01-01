@@ -6,6 +6,7 @@ import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from "rehype-pretty-code";
 import MDXComponents from './MDXPreview';
+import { MarkdownSkeleton } from '../Skeleton';
 interface MarkdownPreviewProps {
   path: string;
 }
@@ -58,11 +59,12 @@ const Markdown: FC<MarkdownPreviewProps> = ({ path }) => {
   }, [path]);
 
   return (
-    <main className="max-w-none prose dark:prose-invert prose-h1:text-3xl md:prose-h1:text-4xl md:mx-4 prose-m-0">
+    <main
+     className="max-w-none prose dark:prose-invert prose-h1:text-3xl md:prose-h1:text-4xl md:mx-4 prose-m-0">
         {mdxSource ? 
         <MDXRemote {...mdxSource} components={MDXComponents} /> 
         : 
-        ''
+        <MarkdownSkeleton />
         }
     </main>
   );

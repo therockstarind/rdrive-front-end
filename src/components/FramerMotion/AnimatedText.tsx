@@ -9,14 +9,15 @@ export default function AnimatedText({
   infinity,
 }: AnimatedTAGProps) {
   return (
-    <motion.p
+    <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: !infinity }}
       variants={variants}
       className={className}
+      transition={{ staggerChildren: 0.5 }}
     >
       {children}
-    </motion.p>
+    </motion.div>
   );
 }

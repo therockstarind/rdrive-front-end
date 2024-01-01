@@ -61,9 +61,7 @@ const Pre = ({ children }: { children?: ReactElement | undefined }) => {
 export default Pre;
 
 ```
-### H3 Link
-
-[Link text](http://www.example.com)
+### This is block
 
 > This is a blockquote.
 
@@ -95,6 +93,7 @@ export default Pre;
   </tbody>
 </table>
 
+#### Code Snippet
 - [x] Task 1
 - [ ] Task 2
 - [ ] Task 3

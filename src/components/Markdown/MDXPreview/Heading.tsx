@@ -1,7 +1,9 @@
 "use client";
-import React, { ReactNode } from 'react';
-import { TiLinkOutline } from "react-icons/ti";
 import Link from 'next/link';
+import { ReactNode } from 'react';
+import { TiLinkOutline } from "react-icons/ti";
+import AnimatedDiv from '®/components/FramerMotion/AnimatedDiv';
+import { fromLeftVariant } from '®/lib/FramerMotionVariants';
 interface HeadingProps {
   children: ReactNode;
   id?: string;
@@ -14,7 +16,9 @@ const createHeading = (level: 1 | 2 | 3 | 4 | 5 | 6) => {
     return (
       <Heading id={id} className="flex items-center gap-1 heading-link" aria-label={id}>
         <Link href={`#${id}`} className="no-underline" passHref>
+        <AnimatedDiv variants={fromLeftVariant}>
           {children}
+        </AnimatedDiv>
         </Link>
         <TiLinkOutline className="relative heading-anchor"/>
       </Heading>

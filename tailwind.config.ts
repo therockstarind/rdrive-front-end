@@ -24,5 +24,7 @@ const config: Config = {
   plugins: [
     require('@tailwindcss/typography'),
     nextui()],
+    autoprefixer: {},
+    'tailwindcss/nesting': {},
 }
 export default config
