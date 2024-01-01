@@ -97,7 +97,7 @@ body::-webkit-scrollbar {
     @apply w-full bottom-0 md:top-0 z-40 justify-center items-center bg-white bg-opacity-70 dark:bg-opacity-70 backdrop-blur-md border-t md:border-b border-gray-400/30 dark:bg-black select-none;
 }
 .FolderGridCard {
-    @apply block flex-row shadow-none Border w-full p-[var(--space-4)];
+    @apply block flex-row shadow-none Border mx-auto p-[var(--space-4)] w-full;
 }
 
 /* Tailwind Utilities */
@@ -129,9 +129,8 @@ td {
 }
 
 .prose img {
-    border-radius: var(--radius-4);
+    @apply rounded-[var(--radius-4)] mx-auto max-w-full 
 }
-
 .prose pre {
     @apply m-0;
 }
@@ -173,3 +172,14 @@ code {
       background-color: var(--shiki-dark-bg);
     }
   }
+
+/* Heading */
+.heading-link .heading-anchor {
+    visibility: hidden;
+    margin-right: 1px; /* Adjust space as needed */
+  }
+  
+  .heading-link:hover .heading-anchor {
+    visibility: visible;
+  }
+  
