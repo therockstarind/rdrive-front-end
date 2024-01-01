@@ -24,7 +24,7 @@ const FolderListLayout = () => {
       </Container>
         <Readme />
       </Flex>
-        <Flex className="min-w-320px" direction="column"  gap="4">
+        <Flex className="min-w-auto" direction="column"  gap="4">
           <ImageCard />
           <Flex justify="center" className="flex md:hidden"><SocialBar /></Flex>
         </Flex>
