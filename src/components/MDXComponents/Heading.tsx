@@ -1,6 +1,7 @@
 "use client";
 import React, { ReactNode } from 'react';
-
+import { TiLinkOutline } from "react-icons/ti";
+import Link from 'next/link';
 interface HeadingProps {
   children: ReactNode;
   id?: string;
@@ -8,15 +9,15 @@ interface HeadingProps {
 
 const createHeading = (level: 1 | 2 | 3 | 4 | 5 | 6) => {
   return ({ children, id }: HeadingProps) => {
-    const Tag = `h${level}` as keyof JSX.IntrinsicElements;
+    const Heading = `h${level}` as keyof JSX.IntrinsicElements;
 
     return (
-      <Tag id={id}>
-        <a aria-hidden="true" tabIndex={-1} href={`#${id}`} className="heading-link no-underline">
-         <span className="heading-anchor">#</span>
+      <Heading id={id} className="flex items-center gap-1 heading-link" aria-label={id}>
+        <Link href={`#${id}`} className="no-underline" passHref>
           {children}
-        </a>
-      </Tag>
+        </Link>
+        <TiLinkOutline className="relative heading-anchor"/>
+      </Heading>
     );
   };
 };

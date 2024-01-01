@@ -4,6 +4,6 @@ import Markdown from "®/components/Markdown/Markdown";
 
 export default function Terms() {
   return (
-    <Markdown  path="/sample.md" />
+    <main className="max-w-5xl mx-auto"><Markdown  path="/sample.md" /></main>
   )
 }

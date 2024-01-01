@@ -114,7 +114,7 @@ body::-webkit-scrollbar {
 }
 
 table {
-    @apply border border-[var(--tw-prose-th-borders)] rounded-[var(--radius-4)] flex flex-col;
+    @apply border border-gray-400/40 rounded-[var(--radius-4)] flex flex-col;
 }
 thead {
     @apply w-full flex flex-col;
@@ -125,7 +125,7 @@ tbody {
 tr,
 th,
 td {
-    @apply  w-full flex justify-around;
+    @apply  w-full flex justify-around divide-x divide-gray-400/40;
 }
 
 .prose img {
@@ -176,7 +176,6 @@ code {
 /* Heading */
 .heading-link .heading-anchor {
     visibility: hidden;
-    margin-right: 1px; /* Adjust space as needed */
   }
   
   .heading-link:hover .heading-anchor {
