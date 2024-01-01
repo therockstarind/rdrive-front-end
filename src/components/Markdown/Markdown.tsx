@@ -58,7 +58,7 @@ const Markdown: FC<MarkdownPreviewProps> = ({ path }) => {
   }, [path]);
 
   return (
-    <main className="max-w-full prose dark:prose-invert">
+    <main className="max-w-none prose dark:prose-invert mx-auto">
         {mdxSource ? <MDXRemote {...mdxSource} components={MDXComponents} /> : ''}
     </main>
   );
