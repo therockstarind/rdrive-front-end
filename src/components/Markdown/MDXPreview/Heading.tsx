@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 import { TiLinkOutline } from "react-icons/ti";
 import AnimatedDiv from '®/components/FramerMotion/AnimatedDiv';
 import { fromLeftVariant } from '®/lib/FramerMotionVariants';
+
 interface HeadingProps {
   children: ReactNode;
   id?: string;
@@ -13,14 +14,19 @@ const createHeading = (level: 1 | 2 | 3 | 4 | 5 | 6) => {
   return ({ children, id }: HeadingProps) => {
     const Heading = `h${level}` as keyof JSX.IntrinsicElements;
 
+    const content = (level === 1 || level === 2 || level === 3)  ? (
+      <AnimatedDiv variants={fromLeftVariant}>
+        {children} <span className="relative heading-anchor">🔗</span>
+      </AnimatedDiv>
+    ) : (
+      <>{children} <span className="relative heading-anchor">🔗</span></>  
+    );
+
     return (
       <Heading id={id} className="flex items-center gap-1 heading-link" aria-label={id}>
         <Link href={`#${id}`} className="no-underline" passHref>
-        <AnimatedDiv variants={fromLeftVariant}>
-          {children}
-        </AnimatedDiv>
+          {content}
         </Link>
-        <TiLinkOutline className="relative heading-anchor"/>
       </Heading>
     );
   };

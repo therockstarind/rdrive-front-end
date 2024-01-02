@@ -21,7 +21,7 @@ const MDXComponents = {
   YouTube,
   EmbedBlog,
   UrlMetaInfo,
-  pre: Pre,
+  // pre: Pre,
   Title,
   img: IMG,
   h1: H1,
