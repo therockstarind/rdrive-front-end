@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <Flex justify="between" align="center" mx="2" my="4">
             <AnimatedHeading variants={fromLeftVariant}>
-                <Link href="#">
+                <Link href="#Xiaomi-12-Pro-(Dimensity-Edition)" passHref>
                     <Heading as="h1" className="line-clamp-1">Xiaomi-12-Pro-(Dimensity-Edition)</Heading>
                 </Link>
             </AnimatedHeading>       

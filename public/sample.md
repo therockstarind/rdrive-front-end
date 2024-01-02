@@ -42,7 +42,7 @@
 </table>
 
 ### Code Snippet
--  When you see the screen **“Where do you want to install Windows”** and Windows cannot find any drives, please click
+-  When you see the screen **“Where do you want to install Windows”** and `Windows` cannot find any drives, please click
 -  When you see the screen **“Where do you want to install Windows”** and Windows cannot find any drives, please click
 -  When you see the screen **“Where do you want to install Windows”** and Windows cannot find any drives, please click
 - [x] Task 1

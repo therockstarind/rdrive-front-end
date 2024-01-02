@@ -1,7 +1,6 @@
 "use client";
-import Link from 'next/link';
 import { ReactNode } from 'react';
-import { TiLinkOutline } from "react-icons/ti";
+
 import AnimatedDiv from '®/components/FramerMotion/AnimatedDiv';
 import { fromLeftVariant } from '®/lib/FramerMotionVariants';
 
@@ -16,17 +15,17 @@ const createHeading = (level: 1 | 2 | 3 | 4 | 5 | 6) => {
 
     const content = (level === 1 || level === 2 || level === 3)  ? (
       <AnimatedDiv variants={fromLeftVariant}>
-        {children} <span className="relative heading-anchor">🔗</span>
+        {children} <span className="heading-anchor">#️</span>
       </AnimatedDiv>
     ) : (
-      <>{children} <span className="relative heading-anchor">🔗</span></>  
+      <>{children} <span className="heading-anchor">#️</span></>
     );
 
     return (
       <Heading id={id} className="flex items-center gap-1 heading-link" aria-label={id}>
-        <Link href={`#${id}`} className="no-underline" passHref>
+        <a href={`#${id}`} className="no-underline text-pretty" >
           {content}
-        </Link>
+        </a>
       </Heading>
     );
   };

@@ -43,7 +43,7 @@ const Markdown: FC<MarkdownPreviewProps> = ({ path }) => {
           mdxOptions: {
             rehypePlugins: [
               rehypeSlug,
-              [rehypeAutolinkHeadings, { behaviour: "wrap" }],
+              [rehypeAutolinkHeadings],
               [rehypePrettyCode as any, Options],
             ],
             development: process.env.NODE_ENV === "development"
@@ -60,7 +60,7 @@ const Markdown: FC<MarkdownPreviewProps> = ({ path }) => {
 
   return (
     <main
-     className="max-w-none prose dark:prose-invert prose-h1:text-3xl md:prose-h1:text-4xl md:mx-4 prose-m-0">
+    className="max-w-none prose dark:prose-invert prose-h1:text-3xl md:prose-h1:text-4xl md:mx-4 prose-m-0">
         {mdxSource ? 
         <MDXRemote {...mdxSource} components={MDXComponents} /> 
         : 

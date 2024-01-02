@@ -1,12 +1,11 @@
 "use client"
-import { Card, CardBody, Image } from "@nextui-org/react";
+import { Card, Image } from "@nextui-org/react";
 import { Flex, Grid, Text } from "@radix-ui/themes";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FadeContainer, fromLeftVariant } from "®/lib/FramerMotionVariants";
 import { FolderGridProps } from "®/lib/types";
 import AnimatedDiv from "./FramerMotion/AnimatedDiv";
-import { useRouter } from "next/navigation";
 
 const FolderItems: FolderGridProps[]  = [
   {
@@ -47,7 +46,7 @@ const FolderItem: React.FC<FolderGridProps> = ({ href, title, img, index }) => {
 return (
   <motion.div key={index} variants={fromLeftVariant} aria-label={title}>
     <Card className="FolderGridCard bg-content1-none sm:p-[var(--space-6)]" isHoverable isPressable onPress={() => router.push('/Xiaomi-12-Pro-(Dimensity-Edition)')} aria-label={title}>
-      <Flex display="flex" justify="center" align="center" className="h-40" mb="2">
+      <Flex display="flex" justify="center" align="center" className="h-40" mb="2"  >
       <Image src={img} alt={title} isBlurred className="mx-auto my-10 h-40 object-center object-contain rounded-none"/>
       </Flex>
       <Text size="3" className="text-center line-clamp-1">{title}</Text>

@@ -19,7 +19,7 @@ const List = [
   },
   {
     href: '/Games',
-    title: 'FRP Files',
+    title: 'FRP-Files',
     size: '122.79 GB',
     date: '24 Dec 2022',
     download: '0',
@@ -27,7 +27,7 @@ const List = [
   },
   {
     href: '/FRP',
-    title: 'Pixel Rom',
+    title: 'Pixel-Rom',
     size: '21.89 GB',
     date: '24 Dec 2022',
     download: '0',
@@ -35,7 +35,7 @@ const List = [
   },
   {
     href: '/Drivers',
-    title: 'ice eea global images V13 0 3 0 SGMEUXM 20220915 0000 00 12 0 dc6cb84563.zip',
+    title: 'ice-eea-global-images-V13-0-3-0-SGMEUXM-20220915-0000-00-12-0-dc6cb84563.zip',
     size: '2.89 GB',
     date: '24 Dec 2022',
     download: '5',
@@ -43,7 +43,7 @@ const List = [
   },
   {
     href: '/Flash-Tool',
-    title: 'Windows 11.iso',
+    title: 'Windows-11.iso',
     size: '11.89 GB',
     date: '24 Dec 2022',
     download: '9',
@@ -51,7 +51,7 @@ const List = [
   },
   {
     href: '/iCloud',
-    title: 'iRemovel Pro.pkg',
+    title: 'iRemovel-Pro.pkg',
     size: '5.98 GB',
     date: '24 Dec 2022',
     download: '0',
@@ -80,7 +80,7 @@ return (
   
 <Listbox aria-label="File List">
       {List.map((list) => (
-        <ListboxItem key={list.title} textValue={list.title} showDivider>
+        <ListboxItem key={list.title} textValue={list.title} showDivider href={`#${list.title}`}>
         <Flex className="grid grid-cols-10 items-center">
             <Flex className="flex col-span-9 md:col-span-6" align="center" gap="2">
                 <Box>{list.icon}</Box>
